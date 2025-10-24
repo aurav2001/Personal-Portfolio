@@ -1,44 +1,115 @@
-import React, { useRef, useState } from 'react'
-import './Navbar.css'
-import logo from '../assets/logo.png'
-import underline from '../assets/nav_underline.svg'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import meu_open from '../assets/menu_open.svg'
-import meu_close from '../assets/menu_close.svg'
+import React, { useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import './Navbar.css';
+import logo from '../assets/logo.png';
+import underline from '../assets/nav_underline.svg';
+import menu_open from '../assets/menu_open.svg';
+import menu_close from '../assets/menu_close.svg';
 
 const Navbar = () => {
+  const [menu, setMenu] = useState("home");
+  const menuRef = useRef();
+  const openIconRef = useRef();
+  const location = useLocation();
 
-    const [menu, setMenu] = useState("home");
-
-
-    const menuRef = useRef();
-
-    const openMenu =() => {
-        menuRef.current.style.right="0";
+  const openMenu = () => {
+    menuRef.current.classList.add('active');
+    if (openIconRef.current) {
+      openIconRef.current.style.display = 'none'; // Hide open icon
     }
+  };
 
-    const closeMenu =() => {
-        menuRef.current.style.right="-350px";
+  const closeMenu = () => {
+    menuRef.current.classList.remove('active');
+    if (openIconRef.current) {
+      openIconRef.current.style.display = 'block'; // Show open icon
     }
+  };
 
-    return (
-        <div className='navbar'>
-            <img src={logo} alt="" />
-            <img src={meu_open} onClick={openMenu} alt="" className='nav-mob-open' />
+  const navItems = [
+    { name: "home", label: "Home", href: "#home" },
+    { name: "about", label: "About Me", href: "#about" },
+    { name: "services", label: "Services", href: "#services" },
+    { name: "portfolio", label: "Portfolio", href: "#work" },
+    { name: "contact", label: "Contact Us", href: "#contact" },
+  ];
 
-            <ul ref={menuRef} className='nav-menu'>
-                <img src={meu_close} onClick={closeMenu} alt="" className="nav-mob-close" />
+  return (
+    <div className='navbar'>
+      <img src={logo} alt="Logo" />
+      <img
+        src={menu_open}
+        onClick={openMenu}
+        alt="Open Menu"
+        className='nav-mob-open'
+        ref={openIconRef}
+      />
+      <ul ref={menuRef} className='nav-menu'>
+        <img src={menu_close} onClick={closeMenu} alt="Close Menu" className="nav-mob-close" />
+        {navItems.map((item) => (
+          <li key={item.name}>
+            {location.pathname === '/' ? (
+              <AnchorLink
+                className='anchor-link'
+                offset={50}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMenu(item.name);
+                  closeMenu();
+                  const element = document.querySelector(item.href);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+              >
+                <p>{item.label}</p>
+              </AnchorLink>
+            ) : (
+              <Link
+                to={`/${item.href}`}
+                className='anchor-link'
+                onClick={() => {
+                  setMenu(item.name);
+                  closeMenu();
+                }}
+              >
+                <p>{item.label}</p>
+              </Link>
+            )}
+            {menu === item.name ? <img src={underline} alt='' /> : null}
+          </li>
+        ))}
+      </ul>
+      <div className="nav-connect">
+        {location.pathname === '/' ? (
+          <AnchorLink
+            className='anchor-link'
+            offset={50}
+            href='#contact'
+            onClick={() => {
+              setMenu("contact");
+              closeMenu();
+            }}
+          >
+            Connect with me
+          </AnchorLink>
+        ) : (
+          <Link
+            to="/#contact"
+            className='anchor-link'
+            onClick={() => {
+              setMenu("contact");
+              closeMenu();
+            }}
+          >
+            Connect with me
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+};
 
-                <li><AnchorLink className='anchor-link' offset={50} href='#home'> <p onClick={()=>setMenu("home")}>Home</p></AnchorLink>{menu === "home" ? <img src={underline} alt='' /> : <></>} </li>
-                <li><AnchorLink className='anchor-link' offset={50} href='#about'> <p onClick={()=>setMenu("about")}>About Me</p></AnchorLink>{menu === "about" ? <img src={underline} alt='' /> : <></>} </li>
-                <li><AnchorLink className='anchor-link' offset={50} href='#services'> <p onClick={()=>setMenu("services")}>Services</p></AnchorLink>{menu === "services" ? <img src={underline} alt='' /> : <></>} </li>
-                <li><AnchorLink className='anchor-link' offset={50} href='#work'> <p onClick={()=>setMenu("portfolio")}>Portfolio</p></AnchorLink>{menu === "portfolio" ? <img src={underline} alt='' /> : <></>} </li>
-                <li><AnchorLink className='anchor-link' offset={50} href='#contact'> <p onClick={()=>setMenu("contact")}>Contact Us</p></AnchorLink>{menu === "contact" ? <img src={underline} alt='' /> : <></>} </li>
-            </ul>
-
-            <div className="nav-connect"> <AnchorLink className='anchor-link' offset={50} href='#contact'> Connect with me </AnchorLink></div>
-        </div>
-    )
-}
-
-export default Navbar
+export default Navbar;
