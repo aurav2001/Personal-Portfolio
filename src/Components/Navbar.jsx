@@ -16,14 +16,14 @@ const Navbar = () => {
   const openMenu = () => {
     menuRef.current.classList.add('active');
     if (openIconRef.current) {
-      openIconRef.current.style.display = 'none'; // Hide open icon
+      openIconRef.current.style.display = 'none'; // Hide hamburger icon
     }
   };
 
   const closeMenu = () => {
     menuRef.current.classList.remove('active');
     if (openIconRef.current) {
-      openIconRef.current.style.display = 'block'; // Show open icon
+      openIconRef.current.style.display = 'block'; // Show hamburger icon
     }
   };
 
@@ -33,7 +33,7 @@ const Navbar = () => {
       if (window.innerWidth > 768 && menuRef.current) {
         menuRef.current.classList.remove('active');
         if (openIconRef.current) {
-          openIconRef.current.style.display = 'block'; // Ensure open icon is visible
+          openIconRef.current.style.display = 'none'; // Ensure hamburger icon is hidden on desktop
         }
       }
     };

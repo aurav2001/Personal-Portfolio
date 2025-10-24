@@ -60,6 +60,9 @@ const App = () => {
               </ErrorBoundary>
             }
           />
+
+
+          <Route path="/about" element={<AboutDetails />} />
         </Routes>
 
         {/* Back to Top Button */}
