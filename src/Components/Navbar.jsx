@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import './Navbar.css';
@@ -26,6 +26,26 @@ const Navbar = () => {
       openIconRef.current.style.display = 'block'; // Show open icon
     }
   };
+
+  // Handle window resize to hide menu on desktop view
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768 && menuRef.current) {
+        menuRef.current.classList.remove('active');
+        if (openIconRef.current) {
+          openIconRef.current.style.display = 'block'; // Ensure open icon is visible
+        }
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Run once on mount to handle initial state
+    handleResize();
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const navItems = [
     { name: "home", label: "Home", href: "#home" },
