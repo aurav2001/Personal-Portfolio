@@ -11,6 +11,25 @@
     margin-top: 70px;
     max-width: 100%;
     height: auto;
+    border-radius: 50%; /* Ensures the image is circular */
+    position: relative;
+    animation: rgbBorder 3s linear infinite; /* Apply the circular RGB animation */
+    box-shadow: 0 0 10px 5px transparent; /* Base shadow to ensure smooth animation */
+}
+
+@keyframes rgbBorder {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.9); /* Red, wider border */
+    }
+    33% {
+        box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.9); /* Green */
+    }
+    66% {
+        box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.9); /* Blue */
+    }
+    100% {
+        box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.9); /* Back to Red */
+    }
 }
 
 .hero h1 {

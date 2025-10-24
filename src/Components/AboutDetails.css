@@ -1,0 +1,43 @@
+.about-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
+  background: #1a1a1a;
+  text-align: center;
+}
+
+.about-details h1 {
+  font-size: 60px;
+  font-weight: 600;
+  background: linear-gradient(267deg, orange 50.41%, #b415ff 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-details p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+.about-details .back-button {
+  padding: 15px 30px;
+  border-radius: 30px;
+  background: linear-gradient(400deg, #df8909 -5.09%, #b415ff);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-details .back-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(180, 21, 255, 0.6);
+}
