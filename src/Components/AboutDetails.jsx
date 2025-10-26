@@ -27,6 +27,7 @@ const AboutDetails = () => {
           <ul className="skills-list">
             <li className="skill-item animate-text">Front-End</li>
             <li className="skill-item animate-text">Back-End</li>
+            <li className="skill-item animate-text">Mysql</li>
             <li className="skill-item animate-text">Responsive Web Development</li>
             <li className="skill-item animate-text">Project Management</li>
           </ul>
