@@ -10,32 +10,38 @@ const mywork_data = [
     {
         w_no:1,
         w_name:"Web design",
-        w_img:project7_img
+        w_img:project7_img,
+        github_link: "https://github.com/aurav2001" // Placeholder
     },
     {
         w_no:2,
         w_name:"Web design",
-        w_img:project8_img
+        w_img:project8_img,
+        github_link: "https://github.com/aurav2001"
     },
     {
         w_no:3,
         w_name:"Web design",
-        w_img:project3_img
+        w_img:project3_img,
+        github_link: "https://github.com/aurav2001"
     },
     {
         w_no:4,
         w_name:"Web design",
-        w_img:project9_img
+        w_img:project9_img,
+        github_link: "https://github.com/aurav2001"
     },
     {
         w_no:5,
         w_name:"Web design",
-        w_img:project10_img
+        w_img:project10_img,
+        github_link: "https://github.com/aurav2001"
     },
     {
         w_no:6,
         w_name:"Web design",
-        w_img:project11_img
+        w_img:project11_img,
+        github_link: "https://github.com/aurav2001"
     },
 ]
  

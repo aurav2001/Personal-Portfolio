@@ -45,15 +45,15 @@ const Contact = () => {
            <div className="space-y-6 pt-4">
               <div className="flex items-center gap-4 text-white hover:text-primary transition-colors cursor-pointer">
                  <img src={mail_icon} alt="" className="w-6 h-6 invert opacity-70" />
-                 <p className="text-lg">gaurav.pandey@example.com</p>
+                 <p className="text-lg">pandeygaurav9801@gmail.com</p>
               </div>
               <div className="flex items-center gap-4 text-white hover:text-primary transition-colors cursor-pointer">
                  <img src={call_icon} alt="" className="w-6 h-6 invert opacity-70" />
-                 <p className="text-lg">+91 1234567890</p>
+                 <p className="text-lg">+91 9801033836</p>
               </div>
               <div className="flex items-center gap-4 text-white hover:text-primary transition-colors cursor-pointer">
                  <img src={location_icon} alt="" className="w-6 h-6 invert opacity-70" />
-                 <p className="text-lg">India, Earth</p>
+                 <p className="text-lg">Siwan, Bihar</p>
               </div>
            </div>
         </div>

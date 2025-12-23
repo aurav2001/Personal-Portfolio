@@ -7,10 +7,10 @@ module.exports = {
     extend: {
       colors: {
         // Custom Dark Theme Palette
-        'dark-bg': '#030014',
+        'dark-bg': '#020617', // Deep Navy Black
         'dark-card': 'rgba(255, 255, 255, 0.03)',
-        'primary': '#a855f7', // Electric Purple
-        'accent': '#f472b6', // Pink
+        'primary': '#3b82f6', // Bright Navy / Royal Blue
+        'accent': '#f472b6', // Pink (Kept as accent for contrast)
       },
       fontFamily: {
         sans: ['Outfit', 'sans-serif'],
