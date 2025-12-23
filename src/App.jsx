@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import ErrorBoundary from './Components/ErrorBoundary';
 import WavyBackground from './Components/WavyBackground/WavyBackground';
+import SocialAssistant from './Components/SocialAssistant';
 import './index.css';
 
 // Lazy Load Components
@@ -55,6 +56,7 @@ const App = () => {
       <div>
         <WavyBackground />
         <Navbar />
+        <SocialAssistant />
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route

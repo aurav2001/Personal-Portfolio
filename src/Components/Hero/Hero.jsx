@@ -17,10 +17,10 @@ const Hero = () => {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] -z-10 animate-pulse delay-1000"></div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center z-10 w-full">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 sm:gap-16 items-center z-10 w-full">
         
-        {/* Text Side */}
-        <div className={`space-y-8 text-center lg:text-left transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        {/* Text Side (Order 2 on Mobile, Order 1 on Desktop) */}
+        <div className={`space-y-8 text-center lg:text-left transition-all duration-1000 order-2 lg:order-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           
           {/* Status Badge */}
           {/* Status Badge Removed per user feedback */}
@@ -60,8 +60,8 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Visual Side: "The Cosmic Portal" */}
-        <div className={`flex justify-center relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+        {/* Visual Side: "The Cosmic Portal" (Order 1 on Mobile, Order 2 on Desktop) */}
+        <div className={`flex justify-center relative transition-all duration-1000 delay-300 order-1 lg:order-2 mb-8 lg:mb-0 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
            
            <div className="relative w-[400px] h-[500px] md:w-[450px] md:h-[550px]">
               
