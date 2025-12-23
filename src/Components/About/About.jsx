@@ -1,216 +1,93 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import './About.css';
-import theme_pattern from '../../assets/theme_pattern.svg';
-import profile_img from '../../assets/about.png';
+import React from 'react';
+import profile_img from '../../assets/profile_img.png';
+import { useScrollReveal } from '../../hooks/useAnimations';
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState({
-    title: false,
-    image: false,
-    text: false,
-    skills: false,
-    achievements: false,
-  });
-
-  const aboutRef = useRef(null);
-  const titleRef = useRef(null);
-  const imageRef = useRef(null);
-  const textRef = useRef(null);
-  const skillsRef = useRef(null);
-  const achievementsRef = useRef(null);
-
-  const [counters, setCounters] = useState({
-    experience: 0,
-    projects: 0,
-    clients: 0,
-  });
-
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.2,
-      rootMargin: '0px',
-    };
-
-    const observerCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const targetName = entry.target.dataset.section;
-          setIsVisible((prev) => ({ ...prev, [targetName]: true }));
-
-          if (targetName === 'achievements') {
-            const animateCounter = (key, target, duration) => {
-              let start = 0;
-              const increment = target / (duration / 16);
-              const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                  start = target;
-                  clearInterval(timer);
-                }
-                setCounters((prev) => ({ ...prev, [key]: Math.floor(start) }));
-              }, 16);
-            };
-
-            animateCounter('experience', 1, 1000);
-            animateCounter('projects', 11, 1000);
-            animateCounter('clients', 6, 1000);
-          }
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    if (titleRef.current) observer.observe(titleRef.current);
-    if (imageRef.current) observer.observe(imageRef.current);
-    if (textRef.current) observer.observe(textRef.current);
-    if (skillsRef.current) observer.observe(skillsRef.current);
-    if (achievementsRef.current) observer.observe(achievementsRef.current);
-
-    return () => observer.disconnect();
-  }, []);
+  const [ref, isVisible] = useScrollReveal();
 
   const skills = [
-    { 
-      name: 'HTML & CSS', 
-      level: 85, 
-      description: 'Expert in crafting responsive layouts and styling with modern CSS techniques.' 
-    },
-    { 
-      name: 'React Js', 
-      level: 60, 
-      description: 'Proficient in building dynamic SPAs with React and state management.' 
-    },
-    { 
-      name: 'JavaScript', 
-      level: 70, 
-      description: 'Skilled in ES6+ features and asynchronous programming.' 
-    },
-    { 
-      name: 'Next Js', 
-      level: 50, 
-      description: 'Experienced with server-side rendering and static site generation.' 
-    },
-    { 
-      name: 'Node.js', 
-      level: 65, 
-      description: 'Building scalable backend applications and RESTful APIs.' 
-    },
-    { 
-      name: 'JAVA', 
-      level: 80, 
-      description: 'Strong expertise in object-oriented programming and Java ecosystems.' 
-    },
-    { 
-      name: 'WebLogic Server', 
-      level: 95, 
-      description: 'Advanced skills in deploying and managing applications on WebLogic.' 
-    },
-    { 
-      name: 'Spring Boot', 
-      level: 50, 
-      description: 'Familiar with building microservices and RESTful APIs.' 
-    },
-    { 
-      name: 'Hibernate', 
-      level: 40, 
-      description: 'Knowledgeable in ORM and database connectivity.' 
-    },
-    { 
-      name: 'MySQL', 
-      level: 60, 
-      description: 'Proficient in designing and querying relational databases.' 
-    },
+    { name: "React JS", level: 90 },
+    { name: "Next JS", level: 85 },
+    { name: "Node JS", level: 80 },
+    { name: "Tailwind CSS", level: 95 },
+    { name: "Typescript", level: 75 },
+    { name: "GraphQL", level: 70 }
   ];
 
   return (
-    <div id="about" className="about" ref={aboutRef}>
-      <div
-        className={`about-title ${isVisible.title ? 'fade-in-up' : ''}`}
-        ref={titleRef}
-        data-section="title"
-      >
-        <h1>About Me</h1>
-        <img src={theme_pattern} alt="" />
+    <div id='about' className="py-24 px-6 max-w-7xl mx-auto" ref={ref}>
+      
+      {/* Heading - New Modern Style */}
+      <div className={`mb-16 text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 inline-block">
+          The Story So Far.
+        </h2>
+        <div className="h-1 w-24 bg-primary mx-auto mt-4 rounded-full"></div>
       </div>
 
-      <div className="about-section">
-        <div
-          className={`about-left ${isVisible.image ? 'slide-in-left' : ''}`}
-          ref={imageRef}
-          data-section="image"
-        >
-          <img src={profile_img} alt="" />
-        </div>
-
-        <div className="about-right">
-          <div
-            className={`about-para ${isVisible.text ? 'fade-in-right' : ''}`}
-            ref={textRef}
-            data-section="text"
-          >
-            <p>I'm a passionate Java Full Stack Developer with a strong focus on building scalable web applications using modern technologies.</p>
-            <p>As a Full Stack Java Developer, I work with both frontend and backend technologies to create complete end-to-end solutions.</p>
-            <p>I specialize in developing robust applications using Java, Spring Boot, React, and MySQL.</p>
-            <p>I have hands-on experience in RESTful APIs, database integration, and responsive UI design. My goal is to deliver efficient, maintainable, and user-friendly software solutions.</p>
-          </div>
-
-          <div
-            className={`about-skills ${isVisible.skills ? 'skills-visible' : ''}`}
-            ref={skillsRef}
-            data-section="skills"
-          >
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="about-skill"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <p className="skill-name" data-tooltip={skill.description}>
-                  {skill.name}
+      <div className="grid md:grid-cols-12 gap-12">
+        
+        {/* Left: Bio Card (Span 7) */}
+        <div className={`md:col-span-7 space-y-8 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+           <div className="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10 group-hover:bg-primary/20 transition-all duration-500"></div>
+              
+              <h3 className="text-2xl font-semibold mb-6 text-white flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-accent"></span>
+                Who I Am
+              </h3>
+              
+              <div className="space-y-4 text-gray-300 leading-relaxed text-lg">
+                <p>
+                  I am a passionate <span className="text-white font-medium">Full Stack Developer</span> with over a decade of experience crafting digital solutions. My journey began with a simple curiosity about how things work on the web, which evolved into a career building robust applications for global clients.
                 </p>
-                <div className="skill-bar-container">
-                  <div
-                    className="skill-bar-fill"
-                    style={{ '--skill-width': `${skill.level}%` }}
-                  >
-                    <span className="skill-percentage">{skill.level}%</span>
-                  </div>
+                <p>
+                  I believe in clean code, user-centric design, and constantly pushing the boundaries of what's possible in the browser.
+                </p>
+              </div>
+
+              {/* Stats Row */}
+              <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-white/10">
+                <div className="text-center">
+                  <h4 className="text-3xl font-bold text-primary">10+</h4>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 mt-1">Years Exp.</p>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-3xl font-bold text-accent">90+</h4>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 mt-1">Projects</p>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-3xl font-bold text-white">15+</h4>
+                  <p className="text-xs uppercase tracking-wider text-gray-500 mt-1">Clients</p>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="about-button">
-            <Link to="/about-details" className="learn-more-button">
-              Learn More
-            </Link>
-          </div>
+           </div>
         </div>
-      </div>
 
-      <div
-        className={`about-achievements ${isVisible.achievements ? 'achievements-visible' : ''}`}
-        ref={achievementsRef}
-        data-section="achievements"
-      >
-        <div className="about-achievement" style={{ animationDelay: '0s' }}>
-          <h1>{counters.experience}+</h1>
-          <p>YEARS OF EXPERIENCE</p>
-        </div>
-        <hr />
+        {/* Right: Skills & Tech (Span 5) */}
+        <div className={`md:col-span-5 space-y-6 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+           
+           {/* Tech Stack Card */}
+           <div className="glass-panel p-8 rounded-3xl h-full border-t border-white/10">
+              <h3 className="text-2xl font-semibold mb-6 text-white flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-primary"></span>
+                Tech Arsenal
+              </h3>
 
-        <div className="about-achievement" style={{ animationDelay: '0.2s' }}>
-          <h1>{counters.projects}+</h1>
-          <p>PROJECTS COMPLETED</p>
-        </div>
-        <hr />
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill, i) => (
+                  <span 
+                    key={i} 
+                    className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-medium hover:bg-primary hover:border-primary transition-all duration-300 cursor-default"
+                  >
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+           </div>
 
-        <div className="about-achievement" style={{ animationDelay: '0.4s' }}>
-          <h1>{counters.clients}+</h1>
-          <p>HAPPY CLIENTS</p>
         </div>
+
       </div>
     </div>
   );

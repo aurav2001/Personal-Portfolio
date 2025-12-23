@@ -1,120 +1,82 @@
-import React, { useState } from 'react';
-import './Contact.css';
-import theme_pattern from '../../assets/theme_pattern.svg';
+import React from 'react';
+import mail_icon from '../../assets/mail_icon.svg';
 import location_icon from '../../assets/location_icon.svg';
 import call_icon from '../../assets/call_icon.svg';
-import mail_icon from '../../assets/mail_icon.svg';
+import { useScrollReveal } from '../../hooks/useAnimations';
 
 const Contact = () => {
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (event) => {
+  const [ref, isVisible] = useScrollReveal();
+  
+  const onSubmit = async (event) => {
     event.preventDefault();
-    setIsSubmitting(true);
+    const formData = new FormData(event.target);
+    formData.append("access_key", "c9117094-a15d-4f32-8438-e4b787597148");
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "2ba0d0bc-d5a5-43df-95ff-74cd44991052",
-          ...formData
-        }),
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        alert("Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      alert("An error occurred. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+    if (res.success) {
+      alert(res.message);
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
-    <div id='contact' className='contact'>
-      <div className="contact-title">
-        <h1>Get in touch</h1>
-        <img src={theme_pattern} alt="" />
-      </div>
+    <div id='contact' className="py-24 px-6 max-w-7xl mx-auto" ref={ref}>
+      
+      <div className="grid md:grid-cols-2 gap-16 items-start">
+        
+        {/* Left Side */}
+        <div className={`space-y-8 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'} transition-all duration-1000`}>
+           <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Let's talk</h1>
+           <p className="text-gray-400 text-lg leading-relaxed max-w-md">
+             I'm currently available to take on new projects. so feel free to send me a message about anything that you want me to work on. You can contact anytime.
+           </p>
 
-      <div className="contact-section">
-        <div className="contact-left">
-          <h1>Let's talk</h1>
-          <p>Have a question or need assistance? Get in touch with us today.</p>
-
-          <div className="cantact-details">
-            <div className="contact-detail">
-              <img src={mail_icon} alt="" />
-              <p>pandeygaurav9801@gmail.com</p>
-            </div>
-
-            <div className="contact-detail">
-              <img src={call_icon} alt="" />
-              <p>+91 8957523347</p>
-            </div>
-
-            <div className="contact-detail">
-              <img src={location_icon} alt="" />
-              <p>Delhi, India</p>
-            </div>
-          </div>
+           <div className="space-y-6 pt-4">
+              <div className="flex items-center gap-4 text-white hover:text-primary transition-colors cursor-pointer">
+                 <img src={mail_icon} alt="" className="w-6 h-6 invert opacity-70" />
+                 <p className="text-lg">gaurav.pandey@example.com</p>
+              </div>
+              <div className="flex items-center gap-4 text-white hover:text-primary transition-colors cursor-pointer">
+                 <img src={call_icon} alt="" className="w-6 h-6 invert opacity-70" />
+                 <p className="text-lg">+91 1234567890</p>
+              </div>
+              <div className="flex items-center gap-4 text-white hover:text-primary transition-colors cursor-pointer">
+                 <img src={location_icon} alt="" className="w-6 h-6 invert opacity-70" />
+                 <p className="text-lg">India, Earth</p>
+              </div>
+           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className='contact-right'>
-          <label>Your Name</label>
-          <input
-            type="text"
-            placeholder='Enter Your Name'
-            name='name'
-            value={formData.name}
-            onChange={handleChange}
-          />
+        {/* Right Side - Clean Form */}
+        <form onSubmit={onSubmit} className={`space-y-6 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'} transition-all duration-1000 delay-200`}>
+           <div className="space-y-2">
+              <label htmlFor="" className="text-sm font-medium text-gray-400">Your Name</label>
+              <input type="text" placeholder="Enter your name" name='name' className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:border-primary focus:bg-white/10 transition-all outline-none" />
+           </div>
+           
+           <div className="space-y-2">
+              <label htmlFor="" className="text-sm font-medium text-gray-400">Your Email</label>
+              <input type="email" placeholder="Enter your email" name='email' className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:border-primary focus:bg-white/10 transition-all outline-none" />
+           </div>
 
-          <label>Your Email</label>
-          <input
-            type="email"
-            placeholder='Enter Your Email'
-            name='email'
-            value={formData.email}
-            onChange={handleChange}
-          />
+           <div className="space-y-2">
+              <label htmlFor="" className="text-sm font-medium text-gray-400">Write your message her</label>
+              <textarea name="message" rows="6" placeholder="Enter your message" className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:border-primary focus:bg-white/10 transition-all outline-none resize-none"></textarea>
+           </div>
 
-          <label>Write Your Message Here</label>
-          <textarea
-            name='message'
-            rows="8"
-            placeholder='Enter your message'
-            value={formData.message}
-            onChange={handleChange}
-          ></textarea>
-
-          <button
-            type='submit'
-            className="contact-submit"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Submitting..." : "Submit Now"}
-          </button>
+           <button type='submit' className="px-10 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-full shadow-lg hover:scale-105 transition-transform duration-300 w-full md:w-auto">
+             Submit now
+           </button>
         </form>
+
       </div>
     </div>
   );

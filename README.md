@@ -4,8 +4,9 @@ A modern, high-performance portfolio website built with React, featuring an inte
 
 ## Features
 
-- **Floating Pill Navigation** - Compact, modern navbar that maximizes screen real estate
-- **High-End Minimalist UI** - "From scratch" redesign with magazine-style layouts and bento grids
+- **Premium Dark Theme** - "Deep Space" aesthetic with rich blacks and electric purple glows
+- **Stealth Pill Navigation** - Dark glass floating navbar with glowing borders
+- **Cinematic UI** - High-contrast text, glowing gradients, and glassmorphism elements
 - **Premium Animations** - Staggered scroll reveals, focus gallery effects, and parallax
 - **Performance Optimized** - Implemented Route-based Lazy Loading and Suspense
 - **Fully Responsive** - Asymmetric layouts that adapt perfectly to mobile
