@@ -51,6 +51,7 @@ const Services = () => {
   return (
     <div id='services' className="py-24 px-6 max-w-7xl mx-auto" ref={ref}>
        <div className={`mb-20 text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <h4 className="text-accent text-sm font-semibold tracking-widest uppercase mb-3">What I Offer</h4>
         <h2 className="text-4xl md:text-5xl font-bold text-white inline-block relative z-10">
           My Services
           <span className="absolute -bottom-2 left-0 w-full h-3 bg-primary/30 -z-10 skew-x-12"></span>

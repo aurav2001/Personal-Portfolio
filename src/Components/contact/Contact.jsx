@@ -34,7 +34,10 @@ const Contact = () => {
         
         {/* Left Side */}
         <div className={`space-y-8 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'} transition-all duration-1000`}>
-           <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Let's talk</h1>
+           <div className="space-y-2">
+              <h4 className="text-accent text-sm font-semibold tracking-widest uppercase">Get in touch</h4>
+              <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Let's talk</h1>
+           </div>
            <p className="text-gray-400 text-lg leading-relaxed max-w-md">
              I'm currently available to take on new projects. so feel free to send me a message about anything that you want me to work on. You can contact anytime.
            </p>
