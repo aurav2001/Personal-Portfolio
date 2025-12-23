@@ -75,8 +75,9 @@ const About = () => {
             </h2>
         </div>
 
-        {/* --- DESKTOP VIEW (Zig-Zag) --- */}
-        <div className="hidden md:block relative w-full overflow-x-auto pb-16 hide-scrollbar cursor-grab active:cursor-grabbing">
+        {/* --- JOURNEY (Horizontal Zig-Zag for ALL Screens) --- */}
+        <div className="relative w-full overflow-x-auto pb-16 hide-scrollbar cursor-grab active:cursor-grabbing">
+           {/* Increased min-width to ensure the curve looks good even on mobile scroll */}
            <div className="min-w-[1400px] px-20 relative h-[450px] flex items-center mx-auto">
               
               <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ minWidth: '1400px' }}>
@@ -150,35 +151,6 @@ const About = () => {
                    </div>
                  );
                })}
-           </div>
-        </div>
-
-        {/* --- MOBILE VIEW (Vertical Timeline) --- */}
-        <div className="md:hidden relative px-4">
-           {/* Constant Glowing Vertical Line */}
-           <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary opacity-30"></div>
-           <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary blur-md opacity-50"></div>
-
-           <div className="space-y-12">
-             {milestones.map((item, index) => (
-                <div key={index} className="relative pl-16">
-                   {/* Glowing Dot on Line */}
-                   <div className="absolute left-[27px] top-6 w-4 h-4 rounded-full bg-accent border-2 border-white shadow-[0_0_15px_#ec4899] z-10"></div>
-                   
-                   <div className="glass-panel p-6 rounded-2xl border border-white/10 bg-white/5 active:scale-95 transition-transform">
-                      <div className="flex items-center gap-4 mb-3">
-                         <div className="text-3xl">{item.icon}</div>
-                         <div>
-                            <span className="text-xs font-bold text-accent tracking-widest uppercase block">{item.year}</span>
-                            <h4 className="text-lg font-bold text-white">{item.title}</h4>
-                         </div>
-                      </div>
-                      <p className="text-sm text-gray-400 leading-relaxed font-light">
-                        {item.desc}
-                      </p>
-                   </div>
-                </div>
-             ))}
            </div>
         </div>
 
