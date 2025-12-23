@@ -5,19 +5,21 @@ A modern, high-performance portfolio website built with React, featuring an inte
 ## Features
 
 - **Premium Dark Theme** - "Deep Space" aesthetic with rich blacks and electric purple glows
-- **Stealth Pill Navigation** - Dark glass floating navbar with glowing borders
+- **"Story Line" Experience** - Unique tree-branch timeline visualization for the About section
+- **Stealth Pill Navigation** - Wide, single-line glass navbar
+- **Professional Iconography** - Custom SVG icons replacing all emojis
 - **Cinematic UI** - High-contrast text, glowing gradients, and glassmorphism elements
 - **Premium Animations** - Staggered scroll reveals, focus gallery effects, and parallax
 - **Performance Optimized** - Implemented Route-based Lazy Loading and Suspense
 - **Fully Responsive** - Asymmetric layouts that adapt perfectly to mobile
-- **Custom Design System** - Built with vanilla CSS variables for a consistent brand language
+- **Custom Design System** - Built with Tailwind CSS v3
 
 ## Tech Stack
 
 - **Frontend Framework:** React 19.2.0
 - **Routing:** React Router DOM 7.9.4
+- **Styling:** Tailwind CSS 3.4
 - **Performance:** React.lazy, Suspense, IntersectionObserver
-- **Styling:** Vanilla CSS (BEM-ish architecture)
 - **Animations:** Custom hooks (`useScrollReveal`, `useParallax`), Canvas API
 - **Fonts:** Google Fonts (Outfit)
 - **Build Tool:** Create React App

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Reset or Base styles if needed */
 html {
   scroll-behavior: smooth;
 }
@@ -14,18 +13,49 @@ body {
     radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.08) 0%, transparent 25%);
 }
 
-/* Scrollbar */
+/* Custom Tree Branch Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
+
 ::-webkit-scrollbar-track {
   @apply bg-dark-bg;
 }
+
+/* Glittering Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-700 rounded-full hover:bg-primary;
+  background: linear-gradient(to bottom, #a855f7, #ec4899, #a855f7);
+  background-size: 100% 200%;
+  border-radius: 99px;
+  border: 3px solid #030014; /* Match bg to create 'floating' look */
+  animation: glitterScroll 2s linear infinite;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5); /* Glow */
+}
+
+@keyframes glitterScroll {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 200%; }
 }
 
 /* Utilities */
 .glass-panel {
   @apply bg-opacity-10 backdrop-blur-lg border border-white/10 shadow-xl;
+}
+
+/* Timeline Branch Line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, transparent, #a855f7, #ec4899, transparent);
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+  }
 }
