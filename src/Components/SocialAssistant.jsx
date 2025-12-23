@@ -6,16 +6,24 @@ const SocialAssistant = () => {
 
   useEffect(() => {
     // Show after 1 minute (60000ms)
-    // For development testing, maybe shorter, but user asked for 1 min.
-    // Let's stick to 60s as requested.
-    const timer = setTimeout(() => {
+    const showTimer = setTimeout(() => {
       if (!isDismissed) {
         setIsVisible(true);
       }
     }, 10000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(showTimer);
   }, [isDismissed]);
+
+  useEffect(() => {
+    // Auto-hide after 5 seconds of appearing
+    if (isVisible) {
+      const hideTimer = setTimeout(() => {
+        setIsVisible(false);
+      }, 5000);
+      return () => clearTimeout(hideTimer);
+    }
+  }, [isVisible]);
 
   const handleDismiss = () => {
     setIsVisible(false);
@@ -61,11 +69,11 @@ const SocialAssistant = () => {
       </div>
 
       {/* Animated Dude Avatar */}
-      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent p-1 shadow-[0_0_20px_rgba(59,130,246,0.5)] animate-bounce hover:animate-none cursor-pointer group" onClick={() => setIsVisible(!isVisible)}>
+      <div className="w-20 h-20 rounded-full bg-transparent drop-shadow-2xl hover:scale-110 transition-transform duration-300 cursor-pointer group" onClick={() => setIsVisible(!isVisible)}>
          <img 
-            src="https://api.dicebear.com/7.x/avataaars/svg?seed=Gaurav" 
+            src="https://api.dicebear.com/9.x/notionists/svg?seed=Gaurav" 
             alt="Assistant" 
-            className="w-full h-full rounded-full bg-dark-bg group-hover:scale-110 transition-transform"
+            className="w-full h-full"
          />
       </div>
 

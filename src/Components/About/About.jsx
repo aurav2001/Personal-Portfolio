@@ -76,86 +76,29 @@ const About = () => {
         </div>
 
         {/* Scroll Container */}
-        <div className="relative w-full overflow-x-auto pb-16 hide-scrollbar cursor-grab active:cursor-grabbing">
-           <div className="min-w-[1400px] px-20 relative h-[450px] flex items-center mx-auto">
-              
-              <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ minWidth: '1400px' }}>
-                <defs>
-                  <linearGradient id="journey-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#a855f7" stopOpacity="0.2" />
-                    <stop offset="50%" stopColor="#ec4899" />
-                    <stop offset="100%" stopColor="#a855f7" stopOpacity="0.2" />
-                  </linearGradient>
-                </defs>
-                 
-                <path 
-                  d="M 50 225 C 200 50, 350 225, 400 225 S 600 400, 750 225 S 950 50, 1100 225 S 1300 400, 1350 225"
-                  fill="none" 
-                  stroke="#ec4899" 
-                  strokeWidth="8"
-                  strokeOpacity="0.1"
-                  className="blur-md"
-                />
+        {/* Scroll Container */}
+        <div className="grid md:grid-cols-4 gap-6">
+           {milestones.map((item, index) => (
+             <div 
+               key={index}
+               className="group relative p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-accent/50 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
+             >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-accent/20 blur-[50px] -z-10 rounded-full group-hover:bg-accent/40 transition-all"></div>
                 
-                {/* Animated Dash Path */}
-                <path 
-                  d="M 50 225 C 200 50, 350 225, 400 225 S 600 400, 750 225 S 950 50, 1100 225 S 1300 400, 1350 225"
-                  fill="none" 
-                  stroke="url(#journey-gradient)" 
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeDasharray="20 10"
-                  className="animate-dash" // Custom animation check index.css
-                />
-              </svg>
-              
-              {milestones.map((item, index) => {
-                 const leftPos = 225 + (index * 350); 
-                 const isTop = index % 2 === 0;
-                 
-                 return (
-                   <div 
-                     key={index}
-                     className="absolute w-64 transform -translate-x-1/2"
-                     style={{ 
-                       left: `${leftPos}px`, 
-                       top: isTop ? '15%' : 'auto', 
-                       bottom: isTop ? 'auto' : '15%' 
-                     }}
-                   >
-                      <div className={`flex flex-col items-center text-center group ${isTop ? 'flex-col-reverse' : 'flex-col'}`}>
-                         
-                         {/* ENHANCED CARD: Glass + Hover Glow */}
-                         <div className={`
-                            glass-panel p-5 rounded-2xl border border-white/10 w-full transition-all duration-500
-                            hover:border-accent/80 hover:bg-white/15 hover:shadow-[0_0_30px_rgba(236,72,153,0.3)] 
-                            hover:-translate-y-3 relative z-20 group-hover:scale-105
-                            ${isTop ? 'mb-8' : 'mt-8'}
-                         `}>
-                             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                             
-                             <div className="w-12 h-12 mx-auto bg-black/40 rounded-full flex items-center justify-center text-2xl mb-4 border border-white/10 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300 shadow-lg">
-                               {item.icon}
-                             </div>
-                             <h4 className="text-xl font-bold text-white mb-1 group-hover:text-accent transition-colors">{item.title}</h4>
-                             <p className="text-xs text-primary font-bold tracking-wider mb-2 uppercase">{item.year}</p>
-                             <p className="text-sm text-gray-400 leading-relaxed font-light">{item.desc}</p>
-                         </div>
+                <div className="text-4xl mb-6 bg-dark-bg w-16 h-16 rounded-2xl flex items-center justify-center border border-white/10 shadow-lg group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
 
-                         {/* ENHANCED Connection Point */}
-                         <div className="relative z-10">
-                            <div className="w-5 h-5 rounded-full bg-dark-bg border-4 border-accent shadow-[0_0_20px_#ec4899] relative z-10 group-hover:scale-150 transition-transform duration-300"></div>
-                            {/* Constant Pulse */}
-                            <div className="absolute inset-0 bg-accent rounded-full animate-ping opacity-75"></div>
-                         </div>
-
-                         <div className={`w-0.5 h-12 bg-gradient-to-b from-accent/50 to-transparent ${isTop ? 'mb-0 bg-gradient-to-t' : 'mt-0'}`}></div>
-                      </div>
-                   </div>
-                 );
-               })}
-
-           </div>
+                <div className="mb-4">
+                  <span className="text-xs font-bold text-accent tracking-widest uppercase">{item.year}</span>
+                  <h3 className="text-xl font-bold text-white mt-1 group-hover:text-primary transition-colors">{item.title}</h3>
+                </div>
+                
+                <p className="text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4 group-hover:border-white/20">
+                  {item.desc}
+                </p>
+             </div>
+           ))}
         </div>
       </div>
 

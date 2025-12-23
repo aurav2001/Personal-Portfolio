@@ -14,6 +14,7 @@ const MyWork = lazy(() => import('./Components/MyWork/MyWork'));
 const Contact = lazy(() => import('./Components/contact/Contact'));
 const Footer = lazy(() => import('./Components/Footer/Footer'));
 const AboutDetails = lazy(() => import('./Components/AboutDetails'));
+const Workflow = lazy(() => import('./Components/Workflow/Workflow'));
 
 // Loading Fallback
 const Loading = () => (
@@ -22,7 +23,7 @@ const Loading = () => (
     display: 'flex', 
     justifyContent: 'center', 
     alignItems: 'center',
-    background: 'white',
+    background: 'var(--color-dark-bg)', // Updated to match theme
     color: 'var(--color-primary)'
   }}>
     <div className="loader">Loading...</div>
@@ -64,6 +65,7 @@ const App = () => {
               element={
                 <ErrorBoundary>
                   <Hero />
+                  <Workflow />
                   <About />
                   <Services />
                   <MyWork />
