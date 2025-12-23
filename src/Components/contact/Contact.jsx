@@ -79,7 +79,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* FIXED: use handleSubmit instead of onSubmit */}
         <form onSubmit={handleSubmit} className='contact-right'>
           <label>Your Name</label>
           <input

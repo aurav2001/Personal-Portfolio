@@ -9,6 +9,7 @@ import menu_close from '../assets/menu_close.svg';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef();
   const openIconRef = useRef();
   const location = useLocation();
@@ -16,35 +17,39 @@ const Navbar = () => {
   const openMenu = () => {
     menuRef.current.classList.add('active');
     if (openIconRef.current) {
-      openIconRef.current.style.display = 'none'; // Hide hamburger icon
+      openIconRef.current.style.display = 'none';
     }
   };
 
   const closeMenu = () => {
     menuRef.current.classList.remove('active');
     if (openIconRef.current) {
-      openIconRef.current.style.display = 'block'; // Show hamburger icon
+      openIconRef.current.style.display = 'block';
     }
   };
 
-  // Handle window resize to hide menu on desktop view
   useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
     const handleResize = () => {
       if (window.innerWidth > 768 && menuRef.current) {
         menuRef.current.classList.remove('active');
         if (openIconRef.current) {
-          openIconRef.current.style.display = 'none'; // Ensure hamburger icon is hidden on desktop
+          openIconRef.current.style.display = 'none';
         }
       }
     };
 
+    window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-
-    // Run once on mount to handle initial state
     handleResize();
 
-    // Cleanup event listener on component unmount
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const navItems = [
@@ -56,7 +61,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className='navbar'>
+    <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <img src={logo} alt="Logo" />
       <img
         src={menu_open}

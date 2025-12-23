@@ -1,185 +1,97 @@
+/* V3 Redesign: Masonry Focus Gallery My Work */
 .mywork {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
-    padding: 20px;
-    box-sizing: border-box;
+  padding: 120px var(--spacing-2xl);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .mywork-title {
-    position: relative;
-    text-align: center;
+  margin-bottom: 60px;
+  max-width: 1400px;
+  margin: 0 auto 60px;
 }
 
 .mywork-title h1 {
-    padding: 0 30px;
-    font-size: 80px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.mywork-title img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    max-width: 150px;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
 }
 
 .mywork-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    width: 100%;
-    max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 24px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
 }
 
+/* Image Card */
 .mywork-container img {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-    aspect-ratio: 3/2;
-    transition: transform 0.3s ease, border 0.3s ease;
-    cursor: pointer;
-    border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 16/10; /* Consistent aspect ratio */
+  object-fit: cover;
+  border-radius: 12px;
+  
+  /* Filter: mute non-hovered items */
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  filter: grayscale(10%) contrast(95%);
+}
+
+.mywork-container:hover img:not(:hover) {
+  filter: blur(2px) grayscale(60%);
+  opacity: 0.7;
 }
 
 .mywork-container img:hover {
-    transform: scale(1.1);
-    border: 2px solid rgb(204, 83, 2);
+  transform: scale(1.03);
+  box-shadow: var(--shadow-xl);
+  filter: grayscale(0%) contrast(105%);
+  z-index: 10;
 }
 
+/* Show More Button - Integrated Flow */
 .mywork-showmore {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border-radius: 50px;
-    border: 2px solid white;
-    padding: 30px 60px;
-    font-size: 22px;
-    color: white;
-    margin-bottom: 80px;
-    transition: gap 0.6s ease, transform 0.3s ease;
-    cursor: pointer;
-    text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 60px;
+  padding: 16px 32px;
+  align-self: center;
+  
+  background: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50px;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1rem;
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .mywork-showmore:hover {
-    gap: 30px;
-    transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--color-text);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .mywork {
-        margin: 60px 40px;
-        gap: 60px;
-    }
-
-    .mywork-title h1 {
-        font-size: 60px;
-        padding: 0 20px;
-    }
-
-    .mywork-title img {
-        max-width: 120px;
-        right: -10px;
-    }
-
-    .mywork-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .mywork-showmore {
-        padding: 25px 50px;
-        font-size: 20px;
-    }
+.mywork-showmore img {
+  width: 16px;
+  transition: transform 0.3s;
 }
 
-@media (max-width: 992px) {
-    .mywork {
-        margin: 50px 30px;
-        align-items: flex-start;
-    }
-
-    .mywork-title h1 {
-        font-size: 50px;
-    }
-
-    .mywork-title img {
-        max-width: 100px;
-    }
-
-    .mywork-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-
-    .mywork-showmore {
-        padding: 20px 45px;
-        font-size: 18px;
-    }
+.mywork-showmore:hover img {
+  transform: translateX(4px);
 }
 
 @media (max-width: 768px) {
-    .mywork {
-        margin: 40px 20px;
-        gap: 40px;
-    }
-
-    .mywork-title h1 {
-        font-size: 40px;
-        padding: 0;
-    }
-
-    .mywork-title img {
-        max-width: 80px;
-        right: -15px;
-    }
-
-    .mywork-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .mywork-container img {
-        max-width: 100%;
-    }
-
-    .mywork-showmore {
-        padding: 18px 40px;
-        font-size: 16px;
-        margin: 40px auto;
-    }
-}
-
-@media (max-width: 576px) {
-    .mywork {
-        margin: 30px 15px;
-        gap: 30px;
-    }
-
-    .mywork-title h1 {
-        font-size: 32px;
-    }
-
-    .mywork-title img {
-        max-width: 60px;
-        right: -10px;
-    }
-
-    .mywork-container {
-        gap: 15px;
-    }
-
-    .mywork-showmore {
-        padding: 15px 30px;
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
+  .mywork-container {
+    grid-template-columns: 1fr;
+  }
 }

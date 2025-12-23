@@ -93,9 +93,9 @@ const About = () => {
       description: 'Experienced with server-side rendering and static site generation.' 
     },
     { 
-      name: 'Bootstrap', 
-      level: 69, 
-      description: 'Adept at using Bootstrap for rapid UI development.' 
+      name: 'Node.js', 
+      level: 65, 
+      description: 'Building scalable backend applications and RESTful APIs.' 
     },
     { 
       name: 'JAVA', 
