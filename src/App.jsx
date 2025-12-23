@@ -14,7 +14,6 @@ const MyWork = lazy(() => import('./Components/MyWork/MyWork'));
 const Contact = lazy(() => import('./Components/contact/Contact'));
 const Footer = lazy(() => import('./Components/Footer/Footer'));
 const AboutDetails = lazy(() => import('./Components/AboutDetails'));
-const Workflow = lazy(() => import('./Components/Workflow/Workflow'));
 
 // Loading Fallback
 const Loading = () => (
@@ -65,7 +64,6 @@ const App = () => {
               element={
                 <ErrorBoundary>
                   <Hero />
-                  <Workflow />
                   <About />
                   <Services />
                   <MyWork />
