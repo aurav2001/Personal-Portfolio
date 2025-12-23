@@ -16,6 +16,7 @@ body {
 /* Custom Tree Branch Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
+  height: 8px; /* For horizontal scroll */
 }
 
 ::-webkit-scrollbar-track {
@@ -27,9 +28,9 @@ body {
   background: linear-gradient(to bottom, #a855f7, #ec4899, #a855f7);
   background-size: 100% 200%;
   border-radius: 99px;
-  border: 3px solid #030014; /* Match bg to create 'floating' look */
+  border: 3px solid #030014;
   animation: glitterScroll 2s linear infinite;
-  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5); /* Glow */
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
 }
 
 @keyframes glitterScroll {
@@ -42,20 +43,11 @@ body {
   @apply bg-opacity-10 backdrop-blur-lg border border-white/10 shadow-xl;
 }
 
-/* Timeline Branch Line */
-.timeline-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(to bottom, transparent, #a855f7, #ec4899, transparent);
-  transform: translateX(-50%);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+/* Hide Scrollbar Utility */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-@media (max-width: 768px) {
-  .timeline-line {
-    left: 20px;
-  }
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
