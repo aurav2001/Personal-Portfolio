@@ -1,15 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import Hero from './Components/Hero/Hero';
-import About from './Components/About/About';
-import Services from './Components/Services/Services';
-import MyWork from './Components/MyWork/MyWork';
-import Contact from './Components/contact/Contact';
-import Footer from './Components/Footer/Footer';
-import AboutDetails from './Components/AboutDetails'; // New component for /about-details
-import ErrorBoundary from './Components/ErrorBoundary'; // Error boundary for robustness
+import ErrorBoundary from './Components/ErrorBoundary';
+import WavyBackground from './Components/WavyBackground/WavyBackground';
+import SocialAssistant from './Components/SocialAssistant';
 import './index.css';
+
+// Lazy Load Components
+const Hero = lazy(() => import('./Components/Hero/Hero'));
+const About = lazy(() => import('./Components/About/About'));
+const Services = lazy(() => import('./Components/Services/Services'));
+const MyWork = lazy(() => import('./Components/MyWork/MyWork'));
+const Contact = lazy(() => import('./Components/contact/Contact'));
+const Footer = lazy(() => import('./Components/Footer/Footer'));
+const AboutDetails = lazy(() => import('./Components/AboutDetails'));
+
+// Loading Fallback
+const Loading = () => (
+  <div style={{ 
+    height: '100vh', 
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center',
+    background: 'var(--color-dark-bg)', // Updated to match theme
+    color: 'var(--color-primary)'
+  }}>
+    <div className="loader">Loading...</div>
+  </div>
+);
 
 const App = () => {
   const [showButton, setShowButton] = useState(false);
@@ -36,34 +54,36 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
+        <WavyBackground />
         <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <ErrorBoundary>
-                <Hero />
-                <About />
-                <Services />
-                <MyWork />
-                <Contact />
-                <Footer />
-              </ErrorBoundary>
-            }
-          />
-          <Route
-            path="/about-details"
-            element={
-              <ErrorBoundary>
-                <AboutDetails />
-                <Footer />
-              </ErrorBoundary>
-            }
-          />
-
-
-          <Route path="/about" element={<AboutDetails />} />
-        </Routes>
+        <SocialAssistant />
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ErrorBoundary>
+                  <Hero />
+                  <About />
+                  <Services />
+                  <MyWork />
+                  <Contact />
+                  <Footer />
+                </ErrorBoundary>
+              }
+            />
+            <Route
+              path="/about-details"
+              element={
+                <ErrorBoundary>
+                  <AboutDetails />
+                  <Footer />
+                </ErrorBoundary>
+              }
+            />
+            <Route path="/about" element={<AboutDetails />} />
+          </Routes>
+        </Suspense>
 
         {/* Back to Top Button */}
         {showButton && (
