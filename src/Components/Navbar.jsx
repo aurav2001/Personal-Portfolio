@@ -123,49 +123,104 @@ const Navbar = () => {
          </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - REDESIGNED */}
       <div className={`fixed inset-0 z-40 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-2xl" onClick={closeMenu}></div>
+          {/* Enhanced Backdrop Blur */}
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-xl" onClick={closeMenu}></div>
           
+          {/* Slide-in Menu Panel */}
           <div className={`
-             absolute top-0 right-0 w-3/4 max-w-sm h-full bg-dark-bg/95 backdrop-blur-xl border-l border-white/10 shadow-2xl
-             flex flex-col p-8 transition-transform duration-500 ease-out
+             absolute top-0 right-0 w-full max-w-md h-full 
+             bg-gradient-to-br from-dark-bg via-dark-bg/98 to-dark-bg/95
+             backdrop-blur-2xl border-l border-white/10 shadow-2xl
+             flex flex-col transition-transform duration-500 ease-out
              ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
           `}>
-             <div className="flex justify-between items-center mb-12">
-               <span className="text-gray-400 text-sm tracking-widest">NAVIGATION</span>
-               <button onClick={closeMenu} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white/20 transition-colors">✕</button>
+             {/* Header */}
+             <div className="flex justify-between items-center p-6 border-b border-white/5">
+               <div className="flex items-center gap-3">
+                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                 <span className="text-gray-400 text-xs font-semibold tracking-[0.3em] uppercase">Menu</span>
+               </div>
+               <button 
+                 onClick={closeMenu} 
+                 className="w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-white hover:bg-white/10 hover:rotate-90 transition-all duration-300 group"
+               >
+                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform">
+                   <line x1="18" y1="6" x2="6" y2="18"></line>
+                   <line x1="6" y1="6" x2="18" y2="18"></line>
+                 </svg>
+               </button>
              </div>
 
-             <ul className="flex flex-col gap-6">
-               {navItems.map((item, index) => {
-                  const slug = item.toLowerCase() === "portfolio" ? "work" : item.toLowerCase();
-                  return (
-                   <li 
-                     key={item} 
-                     className={`transform transition-all duration-500 ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}
-                     style={{ transitionDelay: `${index * 100}ms` }}
-                   >
-                    <AnchorLink 
-                      className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600 hover:from-white hover:to-white transition-all duration-300 flex items-center gap-4 group"
-                      href={item.toLowerCase() === "home" ? "#home" : `#${slug}`}
-                      offset={100}
-                      onClick={() => { setMenu(slug); closeMenu(); }}
-                    >
-                      {item}
-                    </AnchorLink>
-                   </li>
-                 )
-               })}
-             </ul>
+             {/* Navigation Links */}
+             <nav className="flex-1 px-6 py-10 overflow-y-auto">
 
-             <div className="mt-auto pt-10 border-t border-white/10">
-                <p className="text-gray-500 text-sm">© 2025 Gaurav Pandey</p>
-                <div className="flex gap-4 mt-4">
-                   <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors cursor-pointer border border-white/5 hover:border-primary/50">L</div>
-                   <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-accent hover:text-white transition-colors cursor-pointer border border-white/5 hover:border-accent/50">G</div>
-                   <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white hover:text-black transition-colors cursor-pointer border border-white/5 hover:border-white">T</div>
-                </div>
+               <ul className="flex flex-col gap-2">
+                 {navItems.map((item, index) => {
+                    const slug = item.toLowerCase() === "portfolio" ? "work" : item.toLowerCase();
+                    const isActive = menu === slug;
+                    
+                    // Icon mapping
+                    const icons = {
+                      'home': <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>,
+                      'about': <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>,
+                      'services': <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>,
+                      'work': <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>,
+                      'contact': <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    };
+                    
+                    return (
+                     <li 
+                       key={item} 
+                       className={`transform transition-all duration-500 ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}
+                       style={{ transitionDelay: `${index * 80}ms` }}
+                     >
+                      <AnchorLink 
+                        className={`
+                          group flex items-center gap-4 px-5 py-4 rounded-2xl
+                          transition-all duration-300
+                          ${isActive 
+                            ? 'bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 text-white' 
+                            : 'text-gray-400 hover:text-white hover:bg-white/5 border border-transparent'
+                          }
+                        `}
+                        href={item.toLowerCase() === "home" ? "#home" : `#${slug}`}
+                        offset={100}
+                        onClick={() => { setMenu(slug); closeMenu(); }}
+                      >
+                        <div className={`${isActive ? 'text-primary' : 'text-gray-500 group-hover:text-primary'} transition-colors duration-300`}>
+                          {icons[slug]}
+                        </div>
+                        <span className="text-xl font-bold">{item}</span>
+                        <svg 
+                          className={`ml-auto transition-transform duration-300 ${isActive ? 'translate-x-0 opacity-100' : 'translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100'}`}
+                          width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                        >
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </AnchorLink>
+                     </li>
+                   )
+                 })}
+               </ul>
+             </nav>
+
+             {/* Footer - Connect Button */}
+             <div className="p-6 border-t border-white/5">
+               <AnchorLink 
+                 className="w-full py-4 rounded-2xl bg-gradient-to-r from-primary to-accent text-white font-bold text-center flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all duration-300 group"
+                 offset={100} 
+                 href='#contact'
+                 onClick={closeMenu}
+               >
+                 <span>Let's Connect</span>
+                 <svg className="group-hover:translate-x-1 transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                   <line x1="5" y1="12" x2="19" y2="12"></line>
+                   <polyline points="12 5 19 12 12 19"></polyline>
+                 </svg>
+               </AnchorLink>
              </div>
           </div>
       </div>

@@ -79,13 +79,7 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white inline-block">
             My Journey
             </h2>
-            {/* Scroll Hint for Mobile */}
-            <div className="md:hidden mt-4 flex items-center justify-center gap-2 text-gray-400 text-xs animate-pulse opacity-80">
-                <span>Swipe to explore</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M13 17l5-5-5-5M6 17l5-5-5-5" />
-                </svg>
-            </div>
+            {/* Scroll Hint Removed from here */}
         </div>
 
         {/* --- JOURNEY (Horizontal Zig-Zag for ALL Screens) --- */}
@@ -164,6 +158,21 @@ const About = () => {
                    </div>
                  );
                })}
+           </div>
+        </div>
+
+        {/* Swipe Right Hint for Mobile - Below Zigzag */}
+        <div className="md:hidden mt-8 flex flex-col items-center justify-center gap-3 text-gray-300 animate-pulse">
+           <div className="flex items-center gap-2">
+             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
+               <line x1="5" y1="12" x2="19" y2="12"></line>
+               <polyline points="12 5 19 12 12 19"></polyline>
+             </svg>
+             <span className="text-base font-semibold tracking-wide">Swipe Right to Explore</span>
+             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
+               <line x1="5" y1="12" x2="19" y2="12"></line>
+               <polyline points="12 5 19 12 12 19"></polyline>
+             </svg>
            </div>
         </div>
 

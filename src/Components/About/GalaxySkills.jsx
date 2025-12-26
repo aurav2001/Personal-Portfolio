@@ -137,7 +137,7 @@ const CameraAdjuster = () => {
 
 const GalaxySkills = () => {
   return (
-    <div className="w-full h-[500px] md:h-[700px] relative bg-transparent overflow-hidden touch-none">
+    <div className="w-full h-[500px] md:h-[700px] relative bg-transparent overflow-hidden">
       <div className="absolute top-4 md:top-10 left-0 right-0 text-center pointer-events-none z-10 px-4">
          <h4 className="text-accent text-xs md:text-sm font-semibold tracking-widest uppercase mb-2">My Universe</h4>
          <h2 className="text-3xl md:text-4xl font-bold text-white">Skills <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Galaxy</span></h2>
