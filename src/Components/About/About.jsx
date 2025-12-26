@@ -162,14 +162,14 @@ const About = () => {
         </div>
 
         {/* Swipe Right Hint for Mobile - Below Zigzag */}
-        <div className="md:hidden mt-8 flex flex-col items-center justify-center gap-3 text-gray-300 animate-pulse">
-           <div className="flex items-center gap-2">
-             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
+        <div className="md:hidden mt-8 flex flex-col items-center justify-center gap-3 text-gray-300">
+           <div className="flex items-center gap-2 animate-pulse">
+             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-[slide-right_1.5s_ease-in-out_infinite]">
                <line x1="5" y1="12" x2="19" y2="12"></line>
                <polyline points="12 5 19 12 12 19"></polyline>
              </svg>
              <span className="text-base font-semibold tracking-wide">Swipe Right to Explore</span>
-             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
+             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-[slide-right_1.5s_ease-in-out_infinite_0.2s]">
                <line x1="5" y1="12" x2="19" y2="12"></line>
                <polyline points="12 5 19 12 12 19"></polyline>
              </svg>

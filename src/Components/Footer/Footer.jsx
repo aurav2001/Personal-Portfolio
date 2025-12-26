@@ -27,7 +27,7 @@ const Footer = () => {
                  </div>
                </div>
                <p className="text-gray-400 leading-relaxed">
-                 I am a Full Stack Developer from, USA with 10 years of experience in companies like Microsoft, Tesla and Apple.
+                 I am a Full Stack Developer from Siwan, Bihar with 10 years of experience in companies like Microsoft, Tesla and Apple.
                </p>
             </div>
 
