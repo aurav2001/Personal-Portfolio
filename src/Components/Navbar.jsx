@@ -48,11 +48,13 @@ const Navbar = () => {
                 Gaurav
               </h1>
               {/* Wavy Underline */}
-              <div className="absolute -bottom-2 left-0 w-full h-3 overflow-hidden">
-                <svg className="w-[200%] h-full absolute top-0 left-0 animate-wavy-slide opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+              {/* Underline: Starts at 60%, width 100% (so it extends), visible permanently */}
+              <div className="absolute -bottom-2 left-[60%] w-[100%] h-4 overflow-hidden pointer-events-none">
+                <svg className="w-full h-full absolute top-0 left-0 animate-wavy-slide-slow opacity-100" 
                      viewBox="0 0 100 20" preserveAspectRatio="none">
-                  <path d="M0 10 Q 25 20 50 10 T 100 10 T 150 10 T 200 10" 
-                        fill="none" stroke="url(#waveGradient)" strokeWidth="3" />
+                  {/* Tapered Wave: Thick end */}
+                  <path d="M 0 10 Q 25 10 50 10 Q 75 10 100 10 L 100 15 Q 75 20 50 15 Q 25 12 0 10 Z" 
+                        fill="url(#waveGradient)" />
                    <defs>
                      <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="0">
                        <stop offset="0%" stopColor="#DF8908" />
