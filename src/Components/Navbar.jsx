@@ -48,8 +48,8 @@ const Navbar = () => {
                 Gaurav
               </h1>
               {/* Wavy Underline */}
-              {/* Underline: Starts at 60%, width 100% (so it extends), visible permanently */}
-              <div className="absolute -bottom-2 left-[60%] w-[100%] h-4 overflow-hidden pointer-events-none">
+              {/* Underline: Starts from 'u' (approx 40%) to 'v' (end) */}
+              <div className="absolute -bottom-2 left-[42%] w-[58%] h-4 overflow-hidden pointer-events-none">
                 <svg className="w-full h-full absolute top-0 left-0 animate-wavy-slide-slow opacity-100" 
                      viewBox="0 0 100 20" preserveAspectRatio="none">
                   {/* Tapered Wave: Thick end */}
