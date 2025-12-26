@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useScrollReveal } from '../../hooks/useAnimations';
 import { Link } from 'react-router-dom';
+import GalaxySkills from './GalaxySkills';
 
 const About = () => {
   const [ref, isVisible] = useScrollReveal();
@@ -64,6 +65,11 @@ const About = () => {
                <p className="text-sm text-gray-400 uppercase tracking-widest">Happy Clients</p>
             </div>
          </div>
+      </div>
+
+      {/* SECTION 1.5: GALAXY SKILLS */}
+      <div className={`mt-20 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+         <GalaxySkills />
       </div>
 
       {/* SECTION 2: MY JOURNEY (Responsive) */}

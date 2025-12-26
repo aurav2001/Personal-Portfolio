@@ -44,11 +44,24 @@ const Navbar = () => {
          `}>
             {/* Logo */}
             <div className="relative group cursor-pointer" onClick={() => setMenu("home")}>
-              <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent hover:scale-105 transition-transform duration-300 font-outfit tracking-tight">
+              <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent hover:scale-105 transition-transform duration-300 font-outfit tracking-tight relative z-10">
                 Gaurav
               </h1>
-              <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              <div className="absolute -bottom-1 left-0 w-2/3 h-1 bg-gradient-to-r from-primary to-accent rounded-full opacity-50"></div>
+              {/* Wavy Underline */}
+              <div className="absolute -bottom-2 left-0 w-full h-3 overflow-hidden">
+                <svg className="w-[200%] h-full absolute top-0 left-0 animate-wavy-slide opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                     viewBox="0 0 100 20" preserveAspectRatio="none">
+                  <path d="M0 10 Q 25 20 50 10 T 100 10 T 150 10 T 200 10" 
+                        fill="none" stroke="url(#waveGradient)" strokeWidth="3" />
+                   <defs>
+                     <linearGradient id="waveGradient" x1="0" y1="0" x2="1" y2="0">
+                       <stop offset="0%" stopColor="#DF8908" />
+                       <stop offset="50%" stopColor="#B415FF" />
+                       <stop offset="100%" stopColor="#DF8908" />
+                     </linearGradient>
+                   </defs>
+                </svg>
+              </div>
             </div>
 
             {/* Desktop Menu */}

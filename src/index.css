@@ -51,3 +51,13 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Wavy Underline Animation */
+@keyframes wavySlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-wavy-slide {
+  animation: wavySlide 2s linear infinite;
+}
