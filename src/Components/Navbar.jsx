@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import logo from '../assets/logo.svg';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
@@ -44,11 +43,13 @@ const Navbar = () => {
             }
          `}>
             {/* Logo */}
-            <img 
-              src={logo} 
-              alt="Logo" 
-              className="h-8 md:h-10 w-auto cursor-pointer hover:scale-105 transition-transform duration-300 invert brightness-0" 
-            />
+            <div className="relative group cursor-pointer" onClick={() => setMenu("home")}>
+              <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent hover:scale-105 transition-transform duration-300 font-outfit tracking-tight">
+                Gaurav
+              </h1>
+              <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              <div className="absolute -bottom-1 left-0 w-2/3 h-1 bg-gradient-to-r from-primary to-accent rounded-full opacity-50"></div>
+            </div>
 
             {/* Desktop Menu */}
             <ul className="hidden md:flex items-center gap-8 bg-white/5 rounded-full px-8 py-2 border border-white/5 backdrop-blur-sm">

@@ -1,5 +1,4 @@
 import React from 'react';
-import footer_logo from '../../assets/footer_logo.svg';
 import user_icon from '../../assets/user_icon.svg';
 
 const Footer = () => {
@@ -9,7 +8,14 @@ const Footer = () => {
          
          <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
             <div className="max-w-md space-y-6">
-               <img src={footer_logo} alt="" className="h-10 invert brightness-0" />
+               <div className="relative inline-block mb-4">
+                 <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent font-outfit tracking-tight relative z-10">
+                   Gaurav
+                 </h1>
+                 <div className="absolute -bottom-2 left-0 w-full h-1.5 bg-gradient-to-r from-primary via-accent to-primary rounded-full opacity-20 blur-sm"></div>
+                 <div className="absolute -bottom-2 left-0 w-3/4 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                 <div className="absolute -bottom-2 right-0 w-1.5 h-1 bg-primary rounded-full animate-pulse"></div>
+               </div>
                <p className="text-gray-400 leading-relaxed">
                  I am a Full Stack Developer from, USA with 10 years of experience in companies like Microsoft, Tesla and Apple.
                </p>
