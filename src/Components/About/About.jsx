@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useScrollReveal } from '../../hooks/useAnimations';
 import { Link } from 'react-router-dom';
+import GalaxySkills from './GalaxySkills';
 
 const About = () => {
   const [ref, isVisible] = useScrollReveal();
@@ -66,6 +67,11 @@ const About = () => {
          </div>
       </div>
 
+      {/* SECTION 1.5: GALAXY SKILLS */}
+      <div className={`mt-20 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+         <GalaxySkills />
+      </div>
+
       {/* SECTION 2: MY JOURNEY (Responsive) */}
       <div className={`mt-32 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="mb-20 text-center">
@@ -73,6 +79,7 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white inline-block">
             My Journey
             </h2>
+            {/* Scroll Hint Removed from here */}
         </div>
 
         {/* --- JOURNEY (Horizontal Zig-Zag for ALL Screens) --- */}
@@ -151,6 +158,21 @@ const About = () => {
                    </div>
                  );
                })}
+           </div>
+        </div>
+
+        {/* Swipe Right Hint for Mobile - Below Zigzag */}
+        <div className="md:hidden mt-8 flex flex-col items-center justify-center gap-3 text-gray-300">
+           <div className="flex items-center gap-2 animate-pulse">
+             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-[slide-right_1.5s_ease-in-out_infinite]">
+               <line x1="5" y1="12" x2="19" y2="12"></line>
+               <polyline points="12 5 19 12 12 19"></polyline>
+             </svg>
+             <span className="text-base font-semibold tracking-wide">Swipe Right to Explore</span>
+             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-[slide-right_1.5s_ease-in-out_infinite_0.2s]">
+               <line x1="5" y1="12" x2="19" y2="12"></line>
+               <polyline points="12 5 19 12 12 19"></polyline>
+             </svg>
            </div>
         </div>
 

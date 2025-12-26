@@ -11,6 +11,7 @@ body {
   background-image: 
     radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.08) 0%, transparent 25%);
+  overflow-x: hidden; /* Prevent horizontal scrollbar on mobile */
 }
 
 /* Custom Tree Branch Scrollbar */
@@ -50,4 +51,26 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Wavy Underline Animation */
+@keyframes wavySlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-wavy-slide {
+  animation: wavySlide 2s linear infinite;
+}
+
+/* Slide Right Animation for Swipe Hint */
+@keyframes slide-right {
+  0%, 100% { 
+    transform: translateX(0); 
+    opacity: 1;
+  }
+  50% { 
+    transform: translateX(8px); 
+    opacity: 0.6;
+  }
 }

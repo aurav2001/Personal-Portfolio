@@ -22,10 +22,15 @@ const Loading = () => (
     display: 'flex', 
     justifyContent: 'center', 
     alignItems: 'center',
-    background: 'var(--color-dark-bg)', // Updated to match theme
-    color: 'var(--color-primary)'
+    background: '#020617', 
+    flexDirection: 'column',
+    gap: '20px'
   }}>
-    <div className="loader">Loading...</div>
+    <div className="relative w-16 h-16">
+      <div className="absolute inset-0 rounded-full border-4 border-white/10"></div>
+      <div className="absolute inset-0 rounded-full border-4 border-primary border-t-transparent animate-spin"></div>
+    </div>
+    <div className="text-gray-400 text-sm tracking-widest animate-pulse">LOADING UNIVERSE...</div>
   </div>
 );
 
