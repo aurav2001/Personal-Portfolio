@@ -9,98 +9,99 @@ import project_8_img from '../assets/project_8.png'
 import project_9_img from '../assets/project_9.png'
 import project_10_img from '../assets/project_10.png'
 import project_11_img from '../assets/project_11.png'
+import unio_ecom_img from '../assets/Unio-Ecom.png'
 
 const mywork_data = [
     {
         w_no: 1,
         w_name: "E-Commerce Website",
         w_category: "Web Development",
-        w_img: Unio-Ecom,
+        w_img: unio_ecom_img,
         github_link: "https://github.com/aurav2001/ecom"
     },
     {
         w_no: 2,
         w_name: "Banking Website",
         w_category: "Web Development",
-        w_img: project8_img,
-                w_img: project_1_img,
+        w_img: project_8_img,
+        github_link: "https://github.com/aurav2001/server"
     },
     {
         w_no: 3,
         w_name: "Movie Dashboard",
         w_category: "Web Development",
-        w_img: project3_img,
-                w_img: project_2_img,
+        w_img: project_3_img,
+        github_link: "https://github.com/aurav2001/Personal-Portfolio"
     },
     {
         w_no: 4,
         w_name: "ATM Simulation System",
         w_category: "App Development",
-        w_img: project9_img,
-                w_img: project_3_img,
+        w_img: project_9_img,
+        github_link: "https://github.com/aurav2001/Dewi-1.0.0"
     },
     {
         w_no: 5,
         w_name: "Flappy Bird Game",
         w_category: "App Development",
-        w_img: project10_img,
-                w_img: project_4_img,
+        w_img: project_10_img,
+        github_link: "https://github.com/aurav2001/jspractice"
     },
     {
         w_no: 6,
         w_name: "Ecosteps Energy System",
         w_category: "Web Development",
-        w_img: project11_img,
-                w_img: project_5_img,
+        w_img: project_11_img,
+        github_link: "https://github.com/aurav2001"
     },
     {
         w_no: 7,
         w_name: "Arrow Gaurav Puzel",
         w_category: "Web Development",
         w_img: "https://via.placeholder.com/800x450.png?text=Arrow+Gaurav+Puzel",
-                w_img: project_6_img,
+        github_link: "https://arrow-gaurav-puzel.vercel.app"
     },
     {
         w_no: 8,
         w_name: "Frontend Vert Seven",
         w_category: "Web Development",
         w_img: "https://via.placeholder.com/800x450.png?text=Frontend+Vert+Seven",
-                w_img: project_7_img,
+        github_link: "https://frontend-vert-seven-35.vercel.app"
     },
    
     {
         w_no: 10,
         w_name: "AMC Client",
         w_category: "Web Development",
-                w_img: project_8_img,
+        w_img: "https://via.placeholder.com/800x450.png?text=AMC+Client",
         github_link: "https://amc-client-two.vercel.app"
     },
     {
         w_no: 11,
         w_name: "DMS Frontend",
         w_category: "Web Development",
-                w_img: project_9_img,
+        w_img: "https://via.placeholder.com/800x450.png?text=DMS+Frontend",
         github_link: "https://dms-frontend-sandy.vercel.app"
     },
     {
         w_no: 12,
         w_name: "Whearhouse Project (1)",
         w_category: "Web Development",
-                w_img: project_10_img,
+        w_img: "https://via.placeholder.com/800x450.png?text=Whearhouse+Proj+1",
         github_link: "https://whearhouse-proj-9k9u.vercel.app"
     },
     {
         w_no: 13,
         w_name: "Whearhouse Project (2)",
         w_category: "Web Development",
-                w_img: project_11_img,
+        w_img: "https://via.placeholder.com/800x450.png?text=Whearhouse+Proj+2",
         github_link: "https://whearhouse-proj.vercel.app"
     },
     {
         w_no: 14,
         w_name: "JobHai (cyan)",
         w_category: "Web Development",
-                w_img: "https://via.placeholder.com/800x450.png?text=DMS+Frontend",
+        w_img: "https://via.placeholder.com/800x450.png?text=JobHai+Cyan",
         github_link: "https://jobhai-cyan.vercel.app"
     },
     {
