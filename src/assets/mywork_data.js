@@ -19,6 +19,9 @@ import warehouse_img from '../assets/WHMS.png'
 import jobhai_cyan_img from '../assets/Job hai.png'
 import mechno_techno_img from '../assets/MC.png'
 import hospital_img from '../assets/Hospital.png'
+import mr_img from '../assets/MRB.png'
+import arrow_gaurav_puzel_img from '../assets/Arrow.png'
+
 
 const mywork_data = [
     {
@@ -79,7 +82,7 @@ const mywork_data = [
         w_no: 7,
         w_name: "Arrow Gaurav Puzel",
         w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=Arrow+Gaurav+Puzel",
+        w_img: arrow_gaurav_puzel_img,
         github_link: "https://arrow-gaurav-puzel.vercel.app"
     },
     {
@@ -119,29 +122,16 @@ const mywork_data = [
         w_img: jobhai_cyan_img,
         github_link: "https://jobhai-cyan.vercel.app"
     },
-    {
-        w_no: 15,
-        w_name: "JobHai (one)",
-        w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=JobHai+One",
-        github_link: "https://job-hai-one.vercel.app"
-    },
+    
     {
         w_no: 16,
         w_name: "Metri Resume Builder",
         w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=Metri+Resume+Builder",
+        w_img: mr_img,
         github_link: "https://metri-resume-builder.vercel.app"
     },
     
    
-    {
-        w_no: 19,
-        w_name: "E-Commerce Demo",
-        w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=E-Commerce+Demo",
-        github_link: "https://e-commerce-six-ecru-66.vercel.app"
-    },
     
     {
         w_no: 21,
@@ -150,13 +140,7 @@ const mywork_data = [
         w_img: mechno_techno_img,
         github_link: "https://mechno-techno.com"
     },
-    {
-        w_no: 22,
-        w_name: "Matrimonial Client",
-        w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=Matrimonial+Client",
-        github_link: "https://matrimonial-client-brown.vercel.app"
-    },
+   
    
     {
         w_no: 24,
@@ -167,13 +151,7 @@ const mywork_data = [
     },
     
    
-    {
-        w_no: 27,
-        w_name: "Rest API Countries",
-        w_category: "Backend",
-        w_img: "https://via.placeholder.com/800x450.png?text=Rest+API+Countries",
-        github_link: "https://rest-ap-icountries.vercel.app"
-    },
+    
 ]
 
 export default mywork_data;
