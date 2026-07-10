@@ -100,6 +100,11 @@ const MyWork = () => {
                 <img src={work.badge_img} alt={`${work.w_name} badge`} className="w-full h-full object-cover" />
               </div>
             )}
+            {work.badge_name && (
+              <div className="absolute top-16 left-2 px-2 py-1 rounded-md bg-black/60 text-xs text-white backdrop-blur-sm">
+                {work.badge_name}
+              </div>
+            )}
           </div>
         ))}
       </div>

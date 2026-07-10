@@ -22,6 +22,7 @@ const mywork_data = [
         w_category: "Web Development",
         w_img: unio_ecom_img,
         badge_img: unio_ecom_img,
+        badge_name: "Hospital",
         github_link: "https://github.com/aurav2001/ecom"
     },
     {
@@ -30,6 +31,7 @@ const mywork_data = [
         w_category: "Web Development",
         w_img: project_8_img,
         badge_img: uniotechit_img,
+        badge_name: "MC",
         github_link: "https://github.com/aurav2001/server"
     },
     {
@@ -38,6 +40,7 @@ const mywork_data = [
         w_category: "Web Development",
         w_img: project_3_img,
         badge_img: shubh_img,
+        badge_name: "HRMS",
         github_link: "https://github.com/aurav2001/Personal-Portfolio"
     },
     {
@@ -46,6 +49,7 @@ const mywork_data = [
         w_category: "App Development",
         w_img: project_9_img,
         badge_img: uspl_img,
+        badge_name: "Job hai",
         github_link: "https://github.com/aurav2001/Dewi-1.0.0"
     },
     {
@@ -54,6 +58,7 @@ const mywork_data = [
         w_category: "App Development",
         w_img: project_10_img,
         badge_img: unio_remote_img,
+        badge_name: "WHMS",
         github_link: "https://github.com/aurav2001/jspractice"
     },
     {
@@ -62,6 +67,7 @@ const mywork_data = [
         w_category: "Web Development",
         w_img: project_11_img,
         badge_img: uniotechit_img,
+        badge_name: "DMS",
         github_link: "https://github.com/aurav2001"
     },
     {
@@ -73,22 +79,22 @@ const mywork_data = [
     },
     {
         w_no: 8,
-        w_name: "Frontend Vert Seven",
+        w_name: "Uniotech IT",
         w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=Frontend+Vert+Seven",
-        github_link: "https://frontend-vert-seven-35.vercel.app"
+        w_img: "uniotechit_img",
+        github_link: "https://uniotechit.com"
     },
    
     {
         w_no: 10,
-        w_name: "AMC Client",
+        w_name: "USPL site",
         w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=AMC+Client",
-        github_link: "https://amc-client-two.vercel.app"
+        w_img: "uspl_img",
+        github_link: "https://uniresources.in"
     },
     {
         w_no: 11,
-        w_name: "DMS Frontend",
+        w_name: "Documnets Management System",
         w_category: "Web Development",
         w_img: "https://via.placeholder.com/800x450.png?text=DMS+Frontend",
         github_link: "https://dms-frontend-sandy.vercel.app"
@@ -109,7 +115,7 @@ const mywork_data = [
     },
     {
         w_no: 14,
-        w_name: "JobHai (cyan)",
+        w_name: "Job Hai ",
         w_category: "Web Development",
         w_img: "https://via.placeholder.com/800x450.png?text=JobHai+Cyan",
         github_link: "https://jobhai-cyan.vercel.app"
@@ -128,20 +134,8 @@ const mywork_data = [
         w_img: "https://via.placeholder.com/800x450.png?text=Metri+Resume+Builder",
         github_link: "https://metri-resume-builder.vercel.app"
     },
-    {
-        w_no: 17,
-        w_name: "Server Phi",
-        w_category: "Backend",
-        w_img: "https://via.placeholder.com/800x450.png?text=Server+Phi",
-        github_link: "https://server-phi-five-10.vercel.app"
-    },
-    {
-        w_no: 18,
-        w_name: "Client Nu",
-        w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=Client+Nu",
-        github_link: "https://client-nu-one-35.vercel.app"
-    },
+    
+   
     {
         w_no: 19,
         w_name: "E-Commerce Demo",
