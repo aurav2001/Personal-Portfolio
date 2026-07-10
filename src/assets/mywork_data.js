@@ -35,7 +35,7 @@ const mywork_data = [
     badge_img: unio_ecom_img,
     badge_name: 'E-Commerce',
     github_link: 'https://e-commerce-six-ecru-66.vercel.app',
-    tech_stack: ['React', 'Node.js', 'MongoDB'],
+    tech_stack: ['React', 'Tailwind CSS', 'Express', 'MongoDB'],
     featured: true,
   },
   {
@@ -53,16 +53,16 @@ const mywork_data = [
     w_category: 'Web Development',
     w_img: hospital_img,
     github_link: 'https://romashkahealthcare.com/',
-    tech_stack: ['React', 'Node.js', 'Express'],
+    tech_stack: ['React', 'Node.js', 'Express', 'MySQL'],
     featured: true,
   },
   {
     w_no: 4,
     w_name: 'Uniotech IT Solutions',
-    w_category: 'Web Development',
+    w_category: 'Full Stack Development',
     w_img: uniotechit_img,
     github_link: 'https://uniotechit.com',
-    tech_stack: ['React', 'Tailwind CSS'],
+    tech_stack: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'MySQL'],
     featured: true,
   },
   {
@@ -77,10 +77,10 @@ const mywork_data = [
   {
     w_no: 6,
     w_name: 'IT Remote Solutions',
-    w_category: 'Web Development',
+    w_category: 'Full Stack Development',
     w_img: unio_remote_img,
     github_link: 'https://uniotechitsolutions.com/',
-    tech_stack: ['React', 'JavaScript'],
+    tech_stack: ['React', 'Node.js', 'Express', 'MySQL'],
     featured: true,
   },
   // ===== LIVE VERCEL PROJECTS =====
@@ -122,7 +122,7 @@ const mywork_data = [
     w_category: 'Enterprise Software',
     w_img: dms_img,
     github_link: 'https://dms-frontend-sandy.vercel.app',
-    tech_stack: ['React', 'REST API'],
+    tech_stack: ['React', 'Node.js', 'REST API'],
   },
   {
     w_no: 12,
@@ -130,7 +130,7 @@ const mywork_data = [
     w_category: 'Web Development',
     w_img: arrow_gaurav_puzel_img,
     github_link: 'https://arrow-gaurav-puzel.vercel.app',
-    tech_stack: ['JavaScript', 'CSS'],
+    tech_stack: ['React', 'Tailwind CSS', 'Node.js'],
   },
   // ===== LIVE DOMAIN PROJECTS =====
   {
@@ -139,7 +139,7 @@ const mywork_data = [
     w_category: 'Web Development',
     w_img: uspl_img,
     github_link: 'https://uniresources.in',
-    tech_stack: ['React', 'CSS'],
+    tech_stack: ['WordPress', 'CSS'],
   },
   {
     w_no: 14,
@@ -147,7 +147,7 @@ const mywork_data = [
     w_category: 'Full Stack Development',
     w_img: shubh_img,
     github_link: 'https://shubhmuhurat.biz/',
-    tech_stack: ['React', 'Node.js', 'MongoDB'],
+    tech_stack: ['React', 'Node.js', 'MySQL'],
   },
   {
     w_no: 15,
@@ -155,7 +155,7 @@ const mywork_data = [
     w_category: 'Full Stack Development',
     w_img: match_img,
     github_link: 'https://matchmaker.shubhmuhurat.biz/',
-    tech_stack: ['React', 'Node.js'],
+    tech_stack: ['WordPress', 'CSS', 'JavaScript',],
   },
   // ===== OTHER PROJECTS =====
   {
@@ -196,7 +196,7 @@ const mywork_data = [
     badge_img: unio_remote_img,
     badge_name: 'Flappy Bird',
     github_link: '/',
-    tech_stack: ['JavaScript', 'Canvas'],
+    tech_stack: ['Python', 'Pygame'],
   },
   {
     w_no: 20,
@@ -206,7 +206,7 @@ const mywork_data = [
     badge_img: uniotechit_img,
     badge_name: 'ENERGY',
     github_link: '/',
-    tech_stack: ['React', 'Charts'],
+    tech_stack: ['React', 'Charts', 'Node.js', 'MongoDB'],
   },
 ]
 
