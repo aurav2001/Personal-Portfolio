@@ -14,6 +14,11 @@ import unio_remote_img from '../assets/UnioRemote.png'
 import uniotechit_img from '../assets/uniotechit.png'
 import shubh_img from '../assets/ShubhMuhurat.png'
 import uspl_img from '../assets/USPL.png'
+import dms_img from '../assets/DMS.png'
+import warehouse_img from '../assets/WHMS.png'
+import jobhai_cyan_img from '../assets/Job hai.png'
+import mechno_techno_img from '../assets/MC.png'
+import hospital_img from '../assets/Hospital.png'
 
 const mywork_data = [
     {
@@ -96,28 +101,22 @@ const mywork_data = [
         w_no: 11,
         w_name: "Documnets Management System",
         w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=DMS+Frontend",
+        w_img: dms_img,
         github_link: "https://dms-frontend-sandy.vercel.app"
     },
-    {
-        w_no: 12,
-        w_name: "Whearhouse Project (1)",
-        w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=Whearhouse+Proj+1",
-        github_link: "https://whearhouse-proj-9k9u.vercel.app"
-    },
+    
     {
         w_no: 13,
-        w_name: "Whearhouse Project (2)",
+        w_name: "Whearhouse ERP Project ",
         w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=Whearhouse+Proj+2",
+        w_img: warehouse_img,
         github_link: "https://whearhouse-proj.vercel.app"
     },
     {
         w_no: 14,
         w_name: "Job Hai ",
         w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=JobHai+Cyan",
+        w_img: jobhai_cyan_img,
         github_link: "https://jobhai-cyan.vercel.app"
     },
     {
@@ -148,8 +147,8 @@ const mywork_data = [
         w_no: 21,
         w_name: "Mechno Techno",
         w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=Mechno+Techno",
-        github_link: "https://mechno-techno.vercel.app"
+        w_img: mechno_techno_img,
+        github_link: "https://mechno-techno.com"
     },
     {
         w_no: 22,
@@ -163,7 +162,7 @@ const mywork_data = [
         w_no: 24,
         w_name: "Hospital site",
         w_category: "Web Development",
-        w_img: "https://via.placeholder.com/800x450.png?text=Hospital+Site",
+        w_img: hospital_img,
         github_link: "https://hospital-gules-xi.vercel.app"
     },
     
