@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://gaurav-pandey-portfolio.vercel.app/sitemap.xml
