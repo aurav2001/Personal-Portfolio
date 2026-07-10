@@ -22,6 +22,8 @@ import mechno_techno_img from '../assets/MC.png'
 import hospital_img from '../assets/Hospital.png'
 import mr_img from '../assets/MRB.png'
 import arrow_gaurav_puzel_img from '../assets/Arrow.png'
+import amc_img from '../assets/AMC.png'
+import bus_img from '../assets/bus-booking (1).png'
 
 const mywork_data = [
   {
@@ -141,22 +143,39 @@ const mywork_data = [
     w_img: jobhai_cyan_img,
     github_link: 'https://jobhai-cyan.vercel.app',
   },
+
   {
     w_no: 16,
+    w_name: 'Bus Booking System',
+    w_category: 'Web Development',
+    w_img: bus_img,
+    github_link: 'https://bus-booking-lake.vercel.app/',
+  },
+
+  {
+    w_no: 17,
+    w_name: 'Anual Maintenance Contract ',
+    w_category: 'Web Development',
+    w_img: amc_img,
+    github_link: 'https://amc-iota.vercel.app/',
+  },
+
+  {
+    w_no: 18,
     w_name: 'Metri Resume Builder',
     w_category: 'Web Development',
     w_img: mr_img,
     github_link: 'https://metri-resume-builder.vercel.app',
   },
   {
-    w_no: 17,
+    w_no: 19,
     w_name: 'Mechno Techno',
     w_category: 'Web Development',
     w_img: mechno_techno_img,
     github_link: 'https://mechno-techno.com',
   },
   {
-    w_no: 18,
+    w_no: 20,
     w_name: 'Hospital site',
     w_category: 'Web Development',
     w_img: hospital_img,
