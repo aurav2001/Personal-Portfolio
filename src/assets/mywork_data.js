@@ -22,7 +22,7 @@ const mywork_data = [
         w_category: "Web Development",
         w_img: unio_ecom_img,
         badge_img: unio_ecom_img,
-        badge_name: "Hospital",
+        badge_name: "E-Commerce",
         github_link: "https://github.com/aurav2001/ecom"
     },
     {
@@ -31,7 +31,7 @@ const mywork_data = [
         w_category: "Web Development",
         w_img: project_8_img,
         badge_img: uniotechit_img,
-        badge_name: "MC",
+        badge_name: "Banking",
         github_link: "https://github.com/aurav2001/server"
     },
     {
@@ -40,7 +40,7 @@ const mywork_data = [
         w_category: "Web Development",
         w_img: project_3_img,
         badge_img: shubh_img,
-        badge_name: "HRMS",
+        badge_name: "Dashboard",
         github_link: "https://github.com/aurav2001/Personal-Portfolio"
     },
     {
@@ -49,7 +49,7 @@ const mywork_data = [
         w_category: "App Development",
         w_img: project_9_img,
         badge_img: uspl_img,
-        badge_name: "Job hai",
+        badge_name: "ATM",
         github_link: "https://github.com/aurav2001/Dewi-1.0.0"
     },
     {
@@ -58,7 +58,7 @@ const mywork_data = [
         w_category: "App Development",
         w_img: project_10_img,
         badge_img: unio_remote_img,
-        badge_name: "WHMS",
+        badge_name: "Flappy Bird",
         github_link: "https://github.com/aurav2001/jspractice"
     },
     {
@@ -67,7 +67,7 @@ const mywork_data = [
         w_category: "Web Development",
         w_img: project_11_img,
         badge_img: uniotechit_img,
-        badge_name: "DMS",
+        badge_name: "ENERGY",
         github_link: "https://github.com/aurav2001"
     },
     {
@@ -81,7 +81,7 @@ const mywork_data = [
         w_no: 8,
         w_name: "Uniotech IT",
         w_category: "Web Development",
-        w_img: "uniotechit_img",
+        w_img: uniotechit_img,
         github_link: "https://uniotechit.com"
     },
    
@@ -89,7 +89,7 @@ const mywork_data = [
         w_no: 10,
         w_name: "USPL site",
         w_category: "Web Development",
-        w_img: "uspl_img",
+        w_img: uspl_img,
         github_link: "https://uniresources.in"
     },
     {
