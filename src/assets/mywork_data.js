@@ -10,6 +10,10 @@ import project_9_img from '../assets/project_9.png'
 import project_10_img from '../assets/project_10.png'
 import project_11_img from '../assets/project_11.png'
 import unio_ecom_img from '../assets/Unio-Ecom.png'
+import unio_remote_img from '../assets/UnioRemote.png'
+import uniotechit_img from '../assets/uniotechit.png'
+import shubh_img from '../assets/ShubhMuhurat.png'
+import uspl_img from '../assets/USPL.png'
 
 const mywork_data = [
     {
@@ -17,6 +21,7 @@ const mywork_data = [
         w_name: "E-Commerce Website",
         w_category: "Web Development",
         w_img: unio_ecom_img,
+        badge_img: unio_ecom_img,
         github_link: "https://github.com/aurav2001/ecom"
     },
     {
@@ -24,6 +29,7 @@ const mywork_data = [
         w_name: "Banking Website",
         w_category: "Web Development",
         w_img: project_8_img,
+        badge_img: uniotechit_img,
         github_link: "https://github.com/aurav2001/server"
     },
     {
@@ -31,6 +37,7 @@ const mywork_data = [
         w_name: "Movie Dashboard",
         w_category: "Web Development",
         w_img: project_3_img,
+        badge_img: shubh_img,
         github_link: "https://github.com/aurav2001/Personal-Portfolio"
     },
     {
@@ -38,6 +45,7 @@ const mywork_data = [
         w_name: "ATM Simulation System",
         w_category: "App Development",
         w_img: project_9_img,
+        badge_img: uspl_img,
         github_link: "https://github.com/aurav2001/Dewi-1.0.0"
     },
     {
@@ -45,6 +53,7 @@ const mywork_data = [
         w_name: "Flappy Bird Game",
         w_category: "App Development",
         w_img: project_10_img,
+        badge_img: unio_remote_img,
         github_link: "https://github.com/aurav2001/jspractice"
     },
     {
@@ -52,6 +61,7 @@ const mywork_data = [
         w_name: "Ecosteps Energy System",
         w_category: "Web Development",
         w_img: project_11_img,
+        badge_img: uniotechit_img,
         github_link: "https://github.com/aurav2001"
     },
     {

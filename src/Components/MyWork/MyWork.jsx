@@ -94,6 +94,12 @@ const MyWork = () => {
             <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 text-white font-bold text-sm">
               {work.w_no}
             </div>
+            {/* Top Left Badge Image (optional) */}
+            {work.badge_img && (
+              <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10 overflow-hidden">
+                <img src={work.badge_img} alt={`${work.w_name} badge`} className="w-full h-full object-cover" />
+              </div>
+            )}
           </div>
         ))}
       </div>
