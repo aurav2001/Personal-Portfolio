@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import mywork_data from '../../assets/mywork_data';
 import { useScrollReveal } from '../../hooks/useAnimations';
 
@@ -12,6 +12,9 @@ const ExternalLinkIcon = () => (
 
 const MyWork = () => {
   const [ref, isVisible] = useScrollReveal();
+  const [visibleCount, setVisibleCount] = useState(9);
+  const showingAll = visibleCount >= mywork_data.length;
+  const displayed = mywork_data.slice(0, visibleCount);
 
   return (
     <div id='work' className="py-24 px-6 max-w-7xl mx-auto" ref={ref}>
@@ -24,7 +27,7 @@ const MyWork = () => {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {mywork_data.map((work, index) => (
+        {displayed.map((work, index) => (
           <div
             key={index}
             className={`
@@ -111,8 +114,11 @@ const MyWork = () => {
       </div>
 
       <div className="text-center mt-16">
-        <button className="px-10 py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-          Show More
+        <button
+          onClick={() => setVisibleCount(showingAll ? 9 : mywork_data.length)}
+          className="px-10 py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+        >
+          {showingAll ? 'Show Less' : 'Show More'}
         </button>
       </div>
     </div>
