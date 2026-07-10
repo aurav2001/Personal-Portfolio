@@ -34,11 +34,12 @@ const MyWork = () => {
             style={{ transitionDelay: `${index * 100}ms` }}
           >
             {/* Image Container with Zoom Effect */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden flex items-center justify-center bg-black/20">
               <img
                 src={work.w_img}
                 alt={work.w_name}
-                className="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-72 object-contain transition-transform duration-500 group-hover:scale-105 p-4"
+                style={{ maxHeight: '18rem' }}
               />
             </div>
 
