@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import mywork_data from '../../assets/mywork_data';
+import ProtectedLink from '../Auth/ProtectedLink';
 import { useScrollReveal } from '../../hooks/useAnimations';
 
 const ExternalLinkIcon = () => (
@@ -116,14 +117,11 @@ const MyWork = () => {
               {/* Action Buttons */}
               <div className="flex gap-3 pt-2 border-t border-white/5">
                 {hasLiveUrl(work) ? (
-                  <a
-                    href={work.github_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary/80 rounded-lg text-white text-sm font-semibold transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40"
-                  >
-                    <ExternalLinkIcon /> Live Demo
-                  </a>
+                  <ProtectedLink href={work.github_link} className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-primary hover:bg-primary/80 rounded-lg text-white text-sm font-semibold transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/40">
+                    <>
+                      <ExternalLinkIcon /> Live Demo
+                    </>
+                  </ProtectedLink>
                 ) : (
                   <span className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-white/5 rounded-lg text-gray-500 text-sm font-medium border border-white/5">
                     Coming Soon
