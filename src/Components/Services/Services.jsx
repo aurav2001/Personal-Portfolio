@@ -3,6 +3,7 @@ import React from 'react';
 import { useScrollReveal } from '../../hooks/useAnimations';
 import { services } from '../../constants/services';
 import { Link } from 'react-router-dom';
+import PasswordGate from '../Auth/PasswordGate';
 
 const Services = () => {
   const [ref, isVisible] = useScrollReveal();
@@ -16,7 +17,9 @@ const Services = () => {
           <span className="absolute -bottom-2 left-0 w-full h-3 bg-primary/20 -z-10 skew-x-12"></span>
         </h2>
       </div>
+      </PasswordGate>
 
+      <PasswordGate>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service, i) => (
           <Link
