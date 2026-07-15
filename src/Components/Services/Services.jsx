@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { useScrollReveal } from '../../hooks/useAnimations';
 import { services } from '../../constants/services';
 import { Link } from 'react-router-dom';
-import PasswordGate from '../Auth/PasswordGate';
 
 const Services = () => {
   const [ref, isVisible] = useScrollReveal();
@@ -18,7 +16,6 @@ const Services = () => {
         </h2>
       </div>
 
-      <PasswordGate>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service, i) => (
           <Link
@@ -41,7 +38,6 @@ const Services = () => {
           </Link>
         ))}
       </div>
-      </PasswordGate>
     </div>
   );
 };

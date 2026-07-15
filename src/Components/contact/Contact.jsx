@@ -71,7 +71,7 @@ const Contact = () => {
            </div>
 
            <div className="space-y-2">
-              <label htmlFor="" className="text-sm font-medium text-gray-400">Write your message her</label>
+              <label htmlFor="" className="text-sm font-medium text-gray-400">Write your message here</label>
               <textarea name="message" rows="6" placeholder="Enter your message" className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:border-primary focus:bg-white/10 transition-all outline-none resize-none"></textarea>
            </div>
 

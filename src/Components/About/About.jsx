@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useScrollReveal } from '../../hooks/useAnimations';
 import { Link } from 'react-router-dom';
 import GalaxySkills from './GalaxySkills';

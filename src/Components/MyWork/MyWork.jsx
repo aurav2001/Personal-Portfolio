@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import mywork_data from '../../assets/mywork_data';
 import ProtectedLink from '../Auth/ProtectedLink';
-import PasswordGate from '../Auth/PasswordGate';
 import { useScrollReveal } from '../../hooks/useAnimations';
 
 const ExternalLinkIcon = () => (
@@ -57,7 +56,6 @@ const MyWork = () => {
       </div>
 
       {/* Projects Grid */}
-      <PasswordGate>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {displayed.map((work, index) => (
           <div
@@ -134,7 +132,6 @@ const MyWork = () => {
           </div>
         ))}
       </div>
-      </PasswordGate>
 
       {/* Show More / Less Button */}
       {filtered.length > 9 && (
