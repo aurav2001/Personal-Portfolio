@@ -90,7 +90,7 @@ const AboutDetails = () => {
     <div className="pt-32 pb-24 px-6 max-w-7xl mx-auto min-h-screen relative">
       
       {/* Background Noise/Gradient */}
-      <div className="fixed inset-0 bg-[url('/noise.svg')] opacity-5 pointer-events-none"></div>
+      <div className="fixed inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "url('/noise.svg')" }}></div>
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10"></div>
       
       {/* Header */}
