@@ -134,6 +134,7 @@ const MyWork = () => {
           </div>
         ))}
       </div>
+      </PasswordGate>
 
       {/* Show More / Less Button */}
       {filtered.length > 9 && (
