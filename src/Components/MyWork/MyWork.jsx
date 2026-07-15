@@ -38,7 +38,6 @@ const MyWork = () => {
           A curated collection of {mywork_data.length}+ projects showcasing my expertise in web development, enterprise solutions, and creative applications.
         </p>
       </div>
-      </PasswordGate>
 
       {/* Category Filter Pills */}
       <div className={`flex flex-wrap justify-center gap-3 mb-12 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
