@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 export const useScrollReveal = (options = { threshold: 0.1, rootMargin: '0px' }) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const { threshold, rootMargin } = options;
 
   useEffect(() => {
     const element = ref.current;
@@ -14,14 +15,14 @@ export const useScrollReveal = (options = { threshold: 0.1, rootMargin: '0px' })
         setIsVisible(true);
         observer.unobserve(element);
       }
-    }, options);
+    }, { threshold, rootMargin });
 
     observer.observe(element);
 
     return () => {
       if (element) observer.unobserve(element);
     };
-  }, [options.threshold, options.rootMargin]);
+  }, [threshold, rootMargin]);
 
   return [ref, isVisible];
 };

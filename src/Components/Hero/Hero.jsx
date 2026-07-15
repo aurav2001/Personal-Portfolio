@@ -75,7 +75,7 @@ const Hero = () => {
             <div className="absolute inset-4 bg-gradient-to-b from-primary/20 to-accent/20 rounded-full blur-2xl"></div>
 
             {/* Layer 4: The Tech Grid (Optional Texture) */}
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay rounded-full"></div>
+            <div className="absolute inset-0 opacity-20 mix-blend-overlay rounded-full" style={{ backgroundImage: "url('/noise.svg')" }}></div>
 
             {/* Layer 5: The Image Container */}
             <div className="relative h-full w-full rounded-b-full overflow-hidden flex items-end justify-center z-10 transition-transform duration-500 hover:scale-105">

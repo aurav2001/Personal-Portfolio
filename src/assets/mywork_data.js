@@ -1,10 +1,4 @@
-import project_1_img from '../assets/project_1.svg'
-import project_2_img from '../assets/project_2.svg'
 import project_3_img from '../assets/project_3.svg'
-import project_4_img from '../assets/project_4.svg'
-import project_5_img from '../assets/project_5.svg'
-import project_6_img from '../assets/project_6.svg'
-import project_7_img from '../assets/project_7.png'
 import project_8_img from '../assets/project_8.png'
 import project_9_img from '../assets/project_9.png'
 import project_10_img from '../assets/project_10.png'
@@ -34,7 +28,7 @@ const mywork_data = [
     w_img: unio_ecom_img,
     badge_img: unio_ecom_img,
     badge_name: 'E-Commerce',
-    github_link: 'https://uniotechit-ecom.vercel.app',
+    github_link: 'https://uniotechit.com/b2c/',
     tech_stack: ['React', 'Tailwind CSS', 'Express', 'MongoDB'],
     featured: true,
   },
