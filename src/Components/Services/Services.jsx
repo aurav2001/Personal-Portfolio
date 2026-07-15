@@ -17,7 +17,6 @@ const Services = () => {
           <span className="absolute -bottom-2 left-0 w-full h-3 bg-primary/20 -z-10 skew-x-12"></span>
         </h2>
       </div>
-      </PasswordGate>
 
       <PasswordGate>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -42,6 +41,7 @@ const Services = () => {
           </Link>
         ))}
       </div>
+      </PasswordGate>
     </div>
   );
 };
