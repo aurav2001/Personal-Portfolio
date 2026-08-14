@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useAnimations';
 import { Link } from 'react-router-dom';
 import about_img from '../assets/profile_img.png';
-import profile_img from '../assets/profile_img.png';
 import front_img from '../assets/about.jpg';
 
 // Story Section Component
