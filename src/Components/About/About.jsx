@@ -2,6 +2,7 @@ import React from 'react';
 import { useScrollReveal } from '../../hooks/useAnimations';
 import { Link } from 'react-router-dom';
 import GalaxySkills from './GalaxySkills';
+import profile_img from '../../assets/profile_img.png';
 
 const About = () => {
    const [ref, isVisible] = useScrollReveal();
@@ -26,21 +27,53 @@ const About = () => {
          </div>
 
          {/* Summary Content */}
-         <div className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+         <div className={`grid lg:grid-cols-12 gap-12 items-center transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
-            <div className="space-y-6">
-               <h3 className="text-3xl font-bold text-white leading-tight">
-                  Hello, I'm <span className="text-primary">Gaurav</span>. <br />
-                  Creative Developer & Tech Enthusiast.
-               </h3>
-               <p className="text-gray-400 text-lg leading-relaxed">
-                  I am a passionate Full Stack Developer with over a decade of experience crafting immersive digital experiences. My journey is driven by a blend of technical precision and creative exploration.
-               </p>
-               <p className="text-gray-400 text-lg leading-relaxed">
-                  I believe in clean code, user-centric design, and constantly pushing the boundaries of what's possible in the browser.
-               </p>
+            {/* Profile Image Frame */}
+            <div className="lg:col-span-5 flex justify-center">
+               <div className="relative group max-w-md w-full">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-accent/30 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                  <div className="relative rounded-3xl p-3 bg-white/5 border border-white/10 backdrop-blur-md overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+                     <img
+                        src={profile_img}
+                        alt="Gaurav Pandey"
+                        className="w-full h-[380px] sm:h-[420px] object-cover object-top rounded-2xl shadow-2xl transition-transform duration-700 group-hover:scale-105"
+                     />
+                  </div>
+               </div>
+            </div>
 
-               <div className="pt-4">
+            {/* Text & Metrics Column */}
+            <div className="lg:col-span-7 space-y-8">
+               <div className="space-y-6">
+                  <h3 className="text-3xl font-bold text-white leading-tight">
+                     Hello, I'm <span className="text-primary">Gaurav</span>. <br />
+                     Creative Developer & Tech Enthusiast.
+                  </h3>
+                  <p className="text-gray-400 text-lg leading-relaxed">
+                     I am a passionate Full Stack Developer with over a decade of experience crafting immersive digital experiences. My journey is driven by a blend of technical precision and creative exploration.
+                  </p>
+                  <p className="text-gray-400 text-lg leading-relaxed">
+                     I believe in clean code, user-centric design, and constantly pushing the boundaries of what's possible in the browser.
+                  </p>
+               </div>
+
+               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+                  <div className="p-5 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm text-center hover:-translate-y-1 transition-transform duration-300">
+                     <h4 className="text-3xl sm:text-4xl font-bold text-accent mb-1">1.5+</h4>
+                     <p className="text-xs text-gray-400 uppercase tracking-widest">Years Exp.</p>
+                  </div>
+                  <div className="p-5 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm text-center hover:-translate-y-1 transition-transform duration-300">
+                     <h4 className="text-3xl sm:text-4xl font-bold text-primary mb-1">25+</h4>
+                     <p className="text-xs text-gray-400 uppercase tracking-widest">Projects</p>
+                  </div>
+                  <div className="p-5 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm text-center hover:-translate-y-1 transition-transform duration-300 col-span-2 sm:col-span-1">
+                     <h4 className="text-3xl sm:text-4xl font-bold text-white mb-1">15+</h4>
+                     <p className="text-xs text-gray-400 uppercase tracking-widest">Happy Clients</p>
+                  </div>
+               </div>
+
+               <div className="pt-2">
                   <Link
                      to="/about"
                      className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white/5 border border-white/10 text-white font-semibold hover:bg-primary hover:border-primary transition-all duration-300 group"
@@ -48,21 +81,6 @@ const About = () => {
                      Read More
                      <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </Link>
-               </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
-               <div className="p-6 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm text-center hover:-translate-y-1 transition-transform duration-300">
-                  <h4 className="text-4xl font-bold text-accent mb-2">1.5+</h4>
-                  <p className="text-sm text-gray-400 uppercase tracking-widest">Years Exp.</p>
-               </div>
-               <div className="p-6 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm text-center hover:-translate-y-1 transition-transform duration-300">
-                  <h4 className="text-4xl font-bold text-primary mb-2">25+</h4>
-                  <p className="text-sm text-gray-400 uppercase tracking-widest">Projects</p>
-               </div>
-               <div className="p-6 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm text-center hover:-translate-y-1 transition-transform duration-300 col-span-2">
-                  <h4 className="text-4xl font-bold text-white mb-2">15+</h4>
-                  <p className="text-sm text-gray-400 uppercase tracking-widest">Happy Clients</p>
                </div>
             </div>
          </div>

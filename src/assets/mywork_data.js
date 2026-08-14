@@ -18,11 +18,23 @@ import mr_img from '../assets/MRB.png'
 import arrow_gaurav_puzel_img from '../assets/Arrow.png'
 import amc_img from '../assets/AMC.png'
 import bus_img from '../assets/bus-booking (1).png'
+import remoteg_img from '../assets/remoteg.png'
 
 const mywork_data = [
   // ===== BEST PROJECTS - Live URLs (Top Priority) =====
   {
     w_no: 1,
+    w_name: 'RemoteG - System Agent Portal',
+    w_category: 'Full Stack & Remote Agent',
+    w_img: remoteg_img,
+    badge_img: remoteg_img,
+    badge_name: 'RemoteG',
+    github_link: 'https://remoteg-portal.onrender.com/',
+    tech_stack: ['React', 'Node.js', 'WebSockets', 'Render'],
+    featured: true,
+  },
+  {
+    w_no: 2,
     w_name: 'E-Commerce Website',
     w_category: 'Full Stack Development',
     w_img: unio_ecom_img,
@@ -33,7 +45,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 2,
+    w_no: 3,
     w_name: 'Mechno Techno',
     w_category: 'Web Development',
     w_img: mechno_techno_img,
@@ -42,7 +54,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 3,
+    w_no: 4,
     w_name: 'Hospital Management',
     w_category: 'Web Development',
     w_img: hospital_img,
@@ -51,7 +63,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 4,
+    w_no: 5,
     w_name: 'Uniotech IT Solutions',
     w_category: 'Full Stack Development',
     w_img: uniotechit_img,
@@ -60,7 +72,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 5,
+    w_no: 6,
     w_name: 'Metri Resume Builder',
     w_category: 'Web Development',
     w_img: mr_img,
@@ -69,7 +81,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 6,
+    w_no: 7,
     w_name: 'IT Remote Solutions',
     w_category: 'Full Stack Development',
     w_img: unio_remote_img,
@@ -79,7 +91,7 @@ const mywork_data = [
   },
   // ===== LIVE VERCEL PROJECTS =====
   {
-    w_no: 7,
+    w_no: 8,
     w_name: 'Job Hai - Job Portal',
     w_category: 'Full Stack Development',
     w_img: jobhai_cyan_img,
@@ -87,7 +99,7 @@ const mywork_data = [
     tech_stack: ['React', 'Node.js', 'MongoDB'],
   },
   {
-    w_no: 8,
+    w_no: 9,
     w_name: 'Bus Booking System',
     w_category: 'Full Stack Development',
     w_img: bus_img,
@@ -95,7 +107,7 @@ const mywork_data = [
     tech_stack: ['React', 'Express', 'MongoDB'],
   },
   {
-    w_no: 9,
+    w_no: 10,
     w_name: 'Annual Maintenance Contract',
     w_category: 'Web Development',
     w_img: amc_img,
@@ -103,7 +115,7 @@ const mywork_data = [
     tech_stack: ['React', 'Tailwind CSS'],
   },
   {
-    w_no: 10,
+    w_no: 11,
     w_name: 'Warehouse ERP Project',
     w_category: 'Enterprise Software',
     w_img: warehouse_img,
@@ -111,7 +123,7 @@ const mywork_data = [
     tech_stack: ['React', 'Node.js', 'MySQL'],
   },
   {
-    w_no: 11,
+    w_no: 12,
     w_name: 'Document Management System',
     w_category: 'Enterprise Software',
     w_img: dms_img,
@@ -119,7 +131,7 @@ const mywork_data = [
     tech_stack: ['React', 'Node.js', 'REST API'],
   },
   {
-    w_no: 12,
+    w_no: 13,
     w_name: 'Arrow Gaurav Puzzle',
     w_category: 'Web Development',
     w_img: arrow_gaurav_puzel_img,
@@ -128,7 +140,7 @@ const mywork_data = [
   },
   // ===== LIVE DOMAIN PROJECTS =====
   {
-    w_no: 13,
+    w_no: 14,
     w_name: 'USPL Corporate Site',
     w_category: 'Web Development',
     w_img: uspl_img,
@@ -136,7 +148,7 @@ const mywork_data = [
     tech_stack: ['WordPress', 'CSS'],
   },
   {
-    w_no: 14,
+    w_no: 15,
     w_name: 'Matrimony Platform',
     w_category: 'Full Stack Development',
     w_img: shubh_img,
@@ -144,16 +156,16 @@ const mywork_data = [
     tech_stack: ['React', 'Node.js', 'MySQL'],
   },
   {
-    w_no: 15,
+    w_no: 16,
     w_name: 'Matchmaker Portal',
     w_category: 'Full Stack Development',
     w_img: match_img,
     github_link: 'https://matchmaker.shubhmuhurat.biz/',
-    tech_stack: ['WordPress', 'CSS', 'JavaScript',],
+    tech_stack: ['WordPress', 'CSS', 'JavaScript'],
   },
   // ===== OTHER PROJECTS =====
   {
-    w_no: 16,
+    w_no: 17,
     w_name: 'Banking Website',
     w_category: 'Web Development (JSP)',
     w_img: project_8_img,
@@ -163,7 +175,7 @@ const mywork_data = [
     tech_stack: ['JSP', 'Java', 'MySQL'],
   },
   {
-    w_no: 17,
+    w_no: 18,
     w_name: 'Movie Dashboard',
     w_category: 'Web Development',
     w_img: project_3_img,
@@ -173,7 +185,7 @@ const mywork_data = [
     tech_stack: ['React', 'API Integration'],
   },
   {
-    w_no: 18,
+    w_no: 19,
     w_name: 'ATM Simulation System',
     w_category: 'App Development',
     w_img: project_9_img,
@@ -183,7 +195,7 @@ const mywork_data = [
     tech_stack: ['Java', 'Swing'],
   },
   {
-    w_no: 19,
+    w_no: 20,
     w_name: 'Flappy Bird Game',
     w_category: 'Game Development',
     w_img: project_10_img,
@@ -193,7 +205,7 @@ const mywork_data = [
     tech_stack: ['Python', 'Pygame'],
   },
   {
-    w_no: 20,
+    w_no: 21,
     w_name: 'Ecosteps Energy System',
     w_category: 'Web Development',
     w_img: project_11_img,

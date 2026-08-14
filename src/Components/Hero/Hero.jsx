@@ -1,5 +1,5 @@
 import React from 'react';
-import profile_img from '../../assets/profile_img.png';
+import hero_profile from '../../assets/about.jpg';
 import resume from '../../assets/resume.pdf';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useScrollReveal } from '../../hooks/useAnimations';
@@ -21,9 +21,6 @@ const Hero = () => {
 
         {/* Text Side (Order 2 on Mobile, Order 1 on Desktop) */}
         <div className={`space-y-8 text-center lg:text-left transition-all duration-1000 order-2 lg:order-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-
-          {/* Status Badge */}
-          {/* Status Badge Removed per user feedback */}
 
           <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
             Building the <br />
@@ -60,42 +57,38 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Visual Side: "The Cosmic Portal" (Order 1 on Mobile, Order 2 on Desktop) */}
+        {/* Visual Side: "The Cosmic Capsule Portal" (Order 1 on Mobile, Order 2 on Desktop) */}
         <div className={`flex justify-center relative transition-all duration-1000 delay-300 order-1 lg:order-2 mb-8 lg:mb-0 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
 
-          <div className="relative w-[400px] h-[500px] md:w-[450px] md:h-[550px]">
+          <div className="relative w-[320px] h-[420px] sm:w-[360px] sm:h-[480px] flex items-center justify-center">
 
-            {/* Layer 1: The Portal Ring (Spinning) */}
-            <div className="absolute inset-0 m-auto w-[110%] h-[90%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] border border-primary/30 animate-[spin_15s_linear_infinite] blur-[1px]"></div>
+            {/* Layer 1: The Outer Dashed Portal Capsule Ring (Spinning) */}
+            <div className="absolute inset-0 m-auto w-[100%] h-[100%] rounded-[180px] border-2 border-dashed border-primary/40 animate-[spin_30s_linear_infinite]"></div>
 
-            {/* Layer 2: The Reverse Ring (Spinning Reverse) */}
-            <div className="absolute inset-0 m-auto w-[110%] h-[90%] rounded-[60%_40%_30%_70%/60%_30%_70%_40%] border border-accent/30 animate-[spin_20s_linear_infinite_reverse] blur-[1px]"></div>
+            {/* Layer 2: The Inner Reverse Capsule Ring */}
+            <div className="absolute inset-0 m-auto w-[110%] h-[108%] rounded-[190px] border border-accent/40 animate-[spin_25s_linear_infinite_reverse]"></div>
 
-            {/* Layer 3: The Glow Backdrop */}
-            <div className="absolute inset-4 bg-gradient-to-b from-primary/20 to-accent/20 rounded-full blur-2xl"></div>
+            {/* Layer 3: Neon Glow Backdrop */}
+            <div className="absolute inset-6 bg-gradient-to-tr from-primary/30 via-accent/20 to-primary/30 rounded-[160px] blur-3xl -z-10"></div>
 
-            {/* Layer 4: The Tech Grid (Optional Texture) */}
-            <div className="absolute inset-0 opacity-20 mix-blend-overlay rounded-full" style={{ backgroundImage: "url('/noise.svg')" }}></div>
-
-            {/* Layer 5: The Image Container */}
-            <div className="relative h-full w-full rounded-b-full overflow-hidden flex items-end justify-center z-10 transition-transform duration-500 hover:scale-105">
-              {/* Glass Card Behind Image Body */}
-              <div className="absolute bottom-0 w-full h-3/4 bg-white/5 backdrop-blur-sm border-t border-white/10 rounded-t-[200px] -z-10"></div>
-
-              <img
-                src={profile_img}
-                alt="Gaurav Pandey"
-                className="relative z-10 w-full h-auto object-cover drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] mask-image-gradient"
-              />
+            {/* Layer 4: Capsule Photo Avatar Frame */}
+            <div className="relative w-[280px] h-[380px] sm:w-[320px] sm:h-[440px] rounded-[160px] p-[3px] bg-gradient-to-tr from-primary via-accent to-primary shadow-[0_0_50px_rgba(168,85,247,0.35)] z-10 transition-transform duration-500 hover:scale-105">
+              <div className="w-full h-full rounded-[156px] overflow-hidden bg-black/80 relative">
+                <img
+                  src={hero_profile}
+                  alt="Gaurav Pandey"
+                  className="w-full h-full object-cover object-[center_25%] transition-transform duration-700 hover:scale-105"
+                />
+              </div>
             </div>
 
             {/* Floating Orbitals */}
-            <div className="absolute -top-10 -right-10 w-20 h-20 bg-accent/20 rounded-full blur-xl animate-bounce delay-700"></div>
-            <div className="absolute -bottom-5 -left-10 w-16 h-16 bg-primary/20 rounded-full blur-xl animate-bounce"></div>
+            <div className="absolute top-2 -right-2 w-16 h-16 bg-accent/20 rounded-full blur-xl animate-bounce delay-700 pointer-events-none"></div>
+            <div className="absolute bottom-2 -left-2 w-14 h-14 bg-primary/20 rounded-full blur-xl animate-bounce pointer-events-none"></div>
 
-            {/* Tech Badge Floating */}
-            <div className="absolute top-20 -right-4 glass-panel px-4 py-2 rounded-xl border border-white/20 animate-pulse hidden md:block">
-              <span className="text-xs font-bold text-accent">React Expert</span>
+            {/* Floating Tech Badge */}
+            <div className="absolute top-16 -right-6 glass-panel px-4 py-2 rounded-xl border border-white/20 animate-pulse hidden md:block z-20">
+              <span className="text-xs font-bold text-accent">Full Stack Dev</span>
             </div>
 
           </div>
