@@ -19,9 +19,14 @@ import arrow_gaurav_puzel_img from '../assets/Arrow.png'
 import amc_img from '../assets/AMC.png'
 import bus_img from '../assets/bus-booking (1).png'
 import remoteg_img from '../assets/remoteg.png'
+import menabz_hero_img from '../assets/menabz_hero.png'
+import tyka_store_img from '../assets/tyka_store.png'
+import gp_theme_img from '../assets/gp_theme.png'
+import driveria_theme_img from '../assets/driveria_theme.png'
+import themewp_img from '../assets/themewp.png'
 
 const mywork_data = [
-  // ===== BEST PROJECTS - Live URLs (Top Priority) =====
+  // ===== TOP FEATURED & NEW LIVE PROJECTS =====
   {
     w_no: 1,
     w_name: 'RemoteG - System Agent Portal',
@@ -35,6 +40,28 @@ const mywork_data = [
   },
   {
     w_no: 2,
+    w_name: 'MANABS Enterprise Portal',
+    w_category: 'Full Stack Development',
+    w_img: menabz_hero_img,
+    badge_img: menabz_hero_img,
+    badge_name: 'MANABS',
+    github_link: '/',
+    tech_stack: ['React', 'Vite', 'Express', 'MySQL', 'cPanel'],
+    featured: true,
+  },
+  {
+    w_no: 3,
+    w_name: 'Tyka Store - Online Sports Shop',
+    w_category: 'Full Stack Development',
+    w_img: tyka_store_img,
+    badge_img: tyka_store_img,
+    badge_name: 'Tyka Store',
+    github_link: '/',
+    tech_stack: ['React 18', 'Vite', 'Express', 'MongoDB', 'JWT'],
+    featured: true,
+  },
+  {
+    w_no: 4,
     w_name: 'E-Commerce Website',
     w_category: 'Full Stack Development',
     w_img: unio_ecom_img,
@@ -45,7 +72,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 3,
+    w_no: 5,
     w_name: 'Mechno Techno',
     w_category: 'Web Development',
     w_img: mechno_techno_img,
@@ -54,7 +81,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 4,
+    w_no: 6,
     w_name: 'Hospital Management',
     w_category: 'Web Development',
     w_img: hospital_img,
@@ -63,7 +90,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 5,
+    w_no: 7,
     w_name: 'Uniotech IT Solutions',
     w_category: 'Full Stack Development',
     w_img: uniotechit_img,
@@ -72,7 +99,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 6,
+    w_no: 8,
     w_name: 'Metri Resume Builder',
     w_category: 'Web Development',
     w_img: mr_img,
@@ -81,7 +108,7 @@ const mywork_data = [
     featured: true,
   },
   {
-    w_no: 7,
+    w_no: 9,
     w_name: 'IT Remote Solutions',
     w_category: 'Full Stack Development',
     w_img: unio_remote_img,
@@ -89,9 +116,64 @@ const mywork_data = [
     tech_stack: ['React', 'Node.js', 'Express', 'MySQL'],
     featured: true,
   },
+
+  // ===== WORDPRESS DEVELOPMENT (Separate Category) =====
+  {
+    w_no: 10,
+    w_name: 'GP_THEME - Custom WordPress Theme',
+    w_category: 'WordPress Development',
+    w_img: gp_theme_img,
+    badge_img: gp_theme_img,
+    badge_name: 'GP Theme',
+    github_link: '/',
+    tech_stack: ['WordPress', 'PHP', 'CPT', 'Custom Templates'],
+    featured: true,
+  },
+  {
+    w_no: 11,
+    w_name: 'Driveria - Driving Academy Theme',
+    w_category: 'WordPress Development',
+    w_img: driveria_theme_img,
+    badge_img: driveria_theme_img,
+    badge_name: 'Driveria',
+    github_link: '/',
+    tech_stack: ['WordPress', 'PHP', 'Course LMS', 'Custom Theme'],
+    featured: true,
+  },
+  {
+    w_no: 12,
+    w_name: 'ThemeWP - Modern WP Template',
+    w_category: 'WordPress Development',
+    w_img: themewp_img,
+    badge_img: themewp_img,
+    badge_name: 'ThemeWP',
+    github_link: '/',
+    tech_stack: ['WordPress', 'PHP', 'Responsive UI'],
+  },
+  {
+    w_no: 13,
+    w_name: 'USPL Corporate Site',
+    w_category: 'WordPress Development',
+    w_img: uspl_img,
+    badge_img: uspl_img,
+    badge_name: 'USPL',
+    github_link: 'https://uniresources.in',
+    tech_stack: ['WordPress', 'CSS', 'Live Site'],
+  },
+  {
+    w_no: 14,
+    w_name: 'Matchmaker Portal',
+    w_category: 'WordPress Development',
+    w_img: match_img,
+    badge_img: match_img,
+    badge_name: 'Matchmaker',
+    github_link: 'https://matchmaker.shubhmuhurat.biz/',
+    tech_stack: ['WordPress', 'CSS', 'JavaScript'],
+  },
+
   // ===== LIVE VERCEL PROJECTS =====
   {
-    w_no: 8,
+    w_no: 15,
     w_name: 'Job Hai - Job Portal',
     w_category: 'Full Stack Development',
     w_img: jobhai_cyan_img,
@@ -99,7 +181,7 @@ const mywork_data = [
     tech_stack: ['React', 'Node.js', 'MongoDB'],
   },
   {
-    w_no: 9,
+    w_no: 16,
     w_name: 'Bus Booking System',
     w_category: 'Full Stack Development',
     w_img: bus_img,
@@ -107,7 +189,7 @@ const mywork_data = [
     tech_stack: ['React', 'Express', 'MongoDB'],
   },
   {
-    w_no: 10,
+    w_no: 17,
     w_name: 'Annual Maintenance Contract',
     w_category: 'Web Development',
     w_img: amc_img,
@@ -115,7 +197,7 @@ const mywork_data = [
     tech_stack: ['React', 'Tailwind CSS'],
   },
   {
-    w_no: 11,
+    w_no: 18,
     w_name: 'Warehouse ERP Project',
     w_category: 'Enterprise Software',
     w_img: warehouse_img,
@@ -123,7 +205,7 @@ const mywork_data = [
     tech_stack: ['React', 'Node.js', 'MySQL'],
   },
   {
-    w_no: 12,
+    w_no: 19,
     w_name: 'Document Management System',
     w_category: 'Enterprise Software',
     w_img: dms_img,
@@ -131,41 +213,27 @@ const mywork_data = [
     tech_stack: ['React', 'Node.js', 'REST API'],
   },
   {
-    w_no: 13,
+    w_no: 20,
     w_name: 'Arrow Gaurav Puzzle',
     w_category: 'Web Development',
     w_img: arrow_gaurav_puzel_img,
     github_link: 'https://arrow-gaurav-puzel.vercel.app',
     tech_stack: ['React', 'Tailwind CSS', 'Node.js'],
   },
+
   // ===== LIVE DOMAIN PROJECTS =====
   {
-    w_no: 14,
-    w_name: 'USPL Corporate Site',
-    w_category: 'Web Development',
-    w_img: uspl_img,
-    github_link: 'https://uniresources.in',
-    tech_stack: ['WordPress', 'CSS'],
-  },
-  {
-    w_no: 15,
+    w_no: 21,
     w_name: 'Matrimony Platform',
     w_category: 'Full Stack Development',
     w_img: shubh_img,
     github_link: 'https://shubhmuhurat.biz/',
     tech_stack: ['React', 'Node.js', 'MySQL'],
   },
-  {
-    w_no: 16,
-    w_name: 'Matchmaker Portal',
-    w_category: 'Full Stack Development',
-    w_img: match_img,
-    github_link: 'https://matchmaker.shubhmuhurat.biz/',
-    tech_stack: ['WordPress', 'CSS', 'JavaScript'],
-  },
+
   // ===== OTHER PROJECTS =====
   {
-    w_no: 17,
+    w_no: 22,
     w_name: 'Banking Website',
     w_category: 'Web Development (JSP)',
     w_img: project_8_img,
@@ -175,7 +243,7 @@ const mywork_data = [
     tech_stack: ['JSP', 'Java', 'MySQL'],
   },
   {
-    w_no: 18,
+    w_no: 23,
     w_name: 'Movie Dashboard',
     w_category: 'Web Development',
     w_img: project_3_img,
@@ -185,7 +253,7 @@ const mywork_data = [
     tech_stack: ['React', 'API Integration'],
   },
   {
-    w_no: 19,
+    w_no: 24,
     w_name: 'ATM Simulation System',
     w_category: 'App Development',
     w_img: project_9_img,
@@ -195,7 +263,7 @@ const mywork_data = [
     tech_stack: ['Java', 'Swing'],
   },
   {
-    w_no: 20,
+    w_no: 25,
     w_name: 'Flappy Bird Game',
     w_category: 'Game Development',
     w_img: project_10_img,
@@ -205,7 +273,7 @@ const mywork_data = [
     tech_stack: ['Python', 'Pygame'],
   },
   {
-    w_no: 21,
+    w_no: 26,
     w_name: 'Ecosteps Energy System',
     w_category: 'Web Development',
     w_img: project_11_img,

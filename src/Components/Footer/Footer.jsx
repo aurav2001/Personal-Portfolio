@@ -27,7 +27,7 @@ const Footer = () => {
                  </div>
                </div>
                <p className="text-gray-400 leading-relaxed">
-                 I am a Full Stack Developer from Siwan, Bihar with 10 years of experience in companies like Microsoft, Tesla and Apple.
+                 I am a passionate Full Stack & WordPress Developer specializing in crafting high-performance web applications, enterprise portals, and modern digital solutions.
                </p>
             </div>
 
@@ -43,7 +43,7 @@ const Footer = () => {
          </div>
 
          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-           <p>© 2025 Gaurav Pandey. All rights reserved.</p>
+           <p>© 2026 Gaurav Pandey. All rights reserved.</p>
            <div className="flex gap-8">
              <p className="hover:text-white cursor-pointer transition-colors">Term of Services</p>
              <p className="hover:text-white cursor-pointer transition-colors">Privacy Policy</p>

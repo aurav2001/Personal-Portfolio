@@ -51,7 +51,7 @@ const About = () => {
                      Creative Developer & Tech Enthusiast.
                   </h3>
                   <p className="text-gray-400 text-lg leading-relaxed">
-                     I am a passionate Full Stack Developer with over a decade of experience crafting immersive digital experiences. My journey is driven by a blend of technical precision and creative exploration.
+                     I am a passionate Full Stack & WordPress Developer crafting immersive digital experiences, modern web applications, and scalable solutions. My journey is driven by a blend of technical precision and creative exploration.
                   </p>
                   <p className="text-gray-400 text-lg leading-relaxed">
                      I believe in clean code, user-centric design, and constantly pushing the boundaries of what's possible in the browser.

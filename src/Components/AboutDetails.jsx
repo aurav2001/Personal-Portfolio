@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useAnimations';
 import { Link } from 'react-router-dom';
 import about_img from '../assets/profile_img.png';
-import front_img from '../assets/about.jpg';
+// Note: In a real scenario, use different images for different story phases.
 
 // Story Section Component
 const StorySection = ({ title, subtitle, desc, image, align = "left", delay = 0 }) => {
@@ -70,7 +70,7 @@ const AboutDetails = () => {
         "As I dove deeper, I discovered the power of JavaScript. It wasn't just about static pages anymore; it was about interactivity and logic.",
         "I spent years mastering React and the modern frontend ecosystem. I learned that great code isn't just functional—it's clean, maintainable, and scalable. I started freelancing, taking on challenges that pushed my skills to the limit."
       ],
-      image: front_img, // Using Front Page Desk Photo
+      image: about_img, // Using profile image
       align: "right"
     },
     {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import ErrorBoundary from './Components/ErrorBoundary';
 import WavyBackground from './Components/WavyBackground/WavyBackground';
@@ -35,6 +35,25 @@ const Loading = () => (
   </div>
 );
 
+// Helper component for hash scrolling across routes
+const ScrollToHash = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
+  return null;
+};
+
 const App = () => {
   const [showButton, setShowButton] = useState(false);
 
@@ -59,6 +78,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToHash />
       <div>
         <WavyBackground />
         <Navbar />
@@ -87,7 +107,15 @@ const App = () => {
                 </ErrorBoundary>
               }
             />
-            <Route path="/about" element={<AboutDetails />} />
+            <Route
+              path="/about"
+              element={
+                <ErrorBoundary>
+                  <AboutDetails />
+                  <Footer />
+                </ErrorBoundary>
+              }
+            />
             <Route path="/service/:id" element={<ServiceDetails />} />
           </Routes>
         </Suspense>
