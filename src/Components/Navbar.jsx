@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useLocation, Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
@@ -8,6 +9,17 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const { themeSettings, updateTheme } = useTheme();
+
+  const toggleTheme = () => {
+    if (themeSettings?.mode === 'light') {
+      updateTheme({ mode: 'default', bg: '#020617' });
+    } else if (themeSettings?.mode === 'default') {
+      updateTheme({ mode: 'dark', bg: '#09090b' });
+    } else {
+      updateTheme({ mode: 'light', bg: '#f8fafc' });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,8 +113,16 @@ const Navbar = () => {
             })}
           </ul>
 
-          {/* Desktop Connect */}
-          <div className="hidden md:block">
+          {/* Desktop Connect & Theme Switcher */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center transition-all duration-300 text-lg hover:scale-105 active:scale-95 shadow-sm"
+              title={`Theme: ${themeSettings?.mode || 'default'}. Click to switch theme`}
+              aria-label="Toggle Theme"
+            >
+              {themeSettings?.mode === 'light' ? '☀️' : themeSettings?.mode === 'dark' ? '🌑' : '🌌'}
+            </button>
             {isHomePage ? (
               <AnchorLink
                 className={`
@@ -212,7 +232,14 @@ const Navbar = () => {
             </ul>
           </nav>
 
-          <div className="p-6 border-t border-white/5">
+          <div className="p-6 border-t border-white/5 space-y-3">
+            <button
+              onClick={toggleTheme}
+              className="w-full py-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium flex items-center justify-center gap-3 transition-all"
+            >
+              <span>{themeSettings?.mode === 'light' ? '☀️' : themeSettings?.mode === 'dark' ? '🌑' : '🌌'}</span>
+              <span className="text-sm">Theme: {themeSettings?.mode ? themeSettings.mode.toUpperCase() : 'DEFAULT'}</span>
+            </button>
             {isHomePage ? (
               <AnchorLink
                 className="w-full py-4 rounded-2xl bg-gradient-to-r from-primary to-accent text-white font-bold text-center flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all duration-300 group"

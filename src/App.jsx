@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import ErrorBoundary from './Components/ErrorBoundary';
 import WavyBackground from './Components/WavyBackground/WavyBackground';
 import SocialAssistant from './Components/SocialAssistant';
+import { ThemeProvider } from './context/ThemeContext';
 import './index.css';
 
 // Lazy Load Components
@@ -78,59 +79,61 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter>
-      <ScrollToHash />
-      <div>
-        <WavyBackground />
-        <Navbar />
-        <SocialAssistant />
-        <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <ErrorBoundary>
-                  <Hero />
-                  <About />
-                  <Services />
-                  <MyWork />
-                  <Contact />
-                  <Footer />
-                </ErrorBoundary>
-              }
-            />
-            <Route
-              path="/about-details"
-              element={
-                <ErrorBoundary>
-                  <AboutDetails />
-                  <Footer />
-                </ErrorBoundary>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <ErrorBoundary>
-                  <AboutDetails />
-                  <Footer />
-                </ErrorBoundary>
-              }
-            />
-            <Route path="/service/:id" element={<ServiceDetails />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/dashboard" element={<AdminDashboard />} />
-          </Routes>
-        </Suspense>
+    <ThemeProvider>
+      <BrowserRouter>
+        <ScrollToHash />
+        <div>
+          <WavyBackground />
+          <Navbar />
+          <SocialAssistant />
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <ErrorBoundary>
+                    <Hero />
+                    <About />
+                    <Services />
+                    <MyWork />
+                    <Contact />
+                    <Footer />
+                  </ErrorBoundary>
+                }
+              />
+              <Route
+                path="/about-details"
+                element={
+                  <ErrorBoundary>
+                    <AboutDetails />
+                    <Footer />
+                  </ErrorBoundary>
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <ErrorBoundary>
+                    <AboutDetails />
+                    <Footer />
+                  </ErrorBoundary>
+                }
+              />
+              <Route path="/service/:id" element={<ServiceDetails />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/dashboard" element={<AdminDashboard />} />
+            </Routes>
+          </Suspense>
 
-        {/* Back to Top Button */}
-        {showButton && (
-          <button className="back-to-top" onClick={scrollToTop}>
-            ↑
-          </button>
-        )}
-      </div>
-    </BrowserRouter>
+          {/* Back to Top Button */}
+          {showButton && (
+            <button className="back-to-top" onClick={scrollToTop}>
+              ↑
+            </button>
+          )}
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 
