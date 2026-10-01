@@ -15,6 +15,7 @@ const Contact = lazy(() => import('./Components/contact/Contact'));
 const Footer = lazy(() => import('./Components/Footer/Footer'));
 const AboutDetails = lazy(() => import('./Components/AboutDetails'));
 const ServiceDetails = lazy(() => import('./Components/Services/ServiceDetails'));
+const AdminDashboard = lazy(() => import('./Components/Dashboard/AdminDashboard'));
 
 // Loading Fallback
 const Loading = () => (
@@ -117,6 +118,8 @@ const App = () => {
               }
             />
             <Route path="/service/:id" element={<ServiceDetails />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/dashboard" element={<AdminDashboard />} />
           </Routes>
         </Suspense>
 

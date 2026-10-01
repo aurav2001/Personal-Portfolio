@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import mywork_data from '../../assets/mywork_data';
 import ProtectedLink from '../Auth/ProtectedLink';
 import { useScrollReveal } from '../../hooks/useAnimations';
+import { getDynamicProjects } from '../../firebase/projectsService';
 
 const ExternalLinkIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
@@ -15,10 +16,30 @@ const MyWork = () => {
   const [ref, isVisible] = useScrollReveal();
   const [visibleCount, setVisibleCount] = useState(9);
   const [activeFilter, setActiveFilter] = useState('All');
-  const showingAll = visibleCount >= mywork_data.length;
+  const [dynamicProjects, setDynamicProjects] = useState([]);
 
-  const categories = ['All', ...new Set(mywork_data.map(w => w.w_category))];
-  const filtered = activeFilter === 'All' ? mywork_data : mywork_data.filter(w => w.w_category === activeFilter);
+  // Load dynamic projects from Firebase / Local Storage
+  useEffect(() => {
+    let isMounted = true;
+    getDynamicProjects().then((items) => {
+      if (isMounted && items && items.length > 0) {
+        setDynamicProjects(items);
+      }
+    });
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  // Merge: dynamic projects appear on top, followed by all baseline hardcoded projects
+  const allProjects = [
+    ...dynamicProjects.map((p, idx) => ({ ...p, w_no: p.w_no || `D${idx + 1}` })),
+    ...mywork_data
+  ];
+
+  const showingAll = visibleCount >= allProjects.length;
+  const categories = ['All', ...new Set(allProjects.map((w) => w.w_category))];
+  const filtered = activeFilter === 'All' ? allProjects : allProjects.filter((w) => w.w_category === activeFilter);
   const displayed = filtered.slice(0, visibleCount);
 
   const hasLiveUrl = (work) => {
@@ -34,7 +55,7 @@ const MyWork = () => {
           My Projects
         </h2>
         <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-          A curated collection of {mywork_data.length}+ projects showcasing my expertise in web development, enterprise solutions, and creative applications.
+          A curated collection of {allProjects.length}+ projects showcasing my expertise in web development, enterprise solutions, and creative applications.
         </p>
       </div>
 
@@ -59,7 +80,7 @@ const MyWork = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {displayed.map((work, index) => (
           <div
-            key={work.w_no}
+            key={work.id || work.w_no}
             className={`
                group relative rounded-2xl overflow-hidden cursor-pointer border transition-all duration-500
                ${work.featured 
@@ -87,6 +108,10 @@ const MyWork = () => {
                 src={work.w_img}
                 alt={work.w_name}
                 className="w-full h-full object-contain transition-all duration-700 group-hover:scale-110 p-4"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=60';
+                }}
               />
               {/* Subtle gradient shimmer on hover */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -148,8 +173,8 @@ const MyWork = () => {
       {/* Stats Bar */}
       <div className={`mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {[
-          { label: 'Total Projects', value: mywork_data.length + '+' },
-          { label: 'Live Websites', value: mywork_data.filter(w => hasLiveUrl(w)).length + '+' },
+          { label: 'Total Projects', value: allProjects.length + '+' },
+          { label: 'Live Websites', value: allProjects.filter((w) => hasLiveUrl(w)).length + '+' },
           { label: 'Technologies', value: '15+' },
           { label: 'Happy Clients', value: '10+' },
         ].map((stat, i) => (
