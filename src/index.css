@@ -74,12 +74,25 @@ body {
 
 [data-theme='light'] .bg-black\/40,
 [data-theme='light'] .bg-black\/50,
+[data-theme='light'] .bg-black\/75,
 [data-theme='light'] .bg-black\/80 {
   background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
-[data-theme='light'] .bg-gradient-to-b.from-gray-900\/80.to-black {
-  background-image: linear-gradient(to bottom, rgba(241, 245, 249, 0.98), rgba(226, 232, 240, 0.98)) !important;
+[data-theme='light'] aside[aria-label="Apple Floating Navigation Dock"] nav {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme='light'] aside[aria-label="Apple Floating Navigation Dock"] .text-white {
+  color: #0f172a !important;
+}
+
+[data-theme='light'] aside[aria-label="Apple Floating Navigation Dock"] .bg-white\/20,
+[data-theme='light'] aside[aria-label="Apple Floating Navigation Dock"] .bg-white\/15 {
+  background-color: rgba(59, 130, 246, 0.12) !important;
+  color: #2563eb !important;
 }
 
 [data-theme='light'] .bg-dark-bg\/70 {

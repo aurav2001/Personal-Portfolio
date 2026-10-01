@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import ErrorBoundary from './Components/ErrorBoundary';
@@ -57,26 +57,6 @@ const ScrollToHash = () => {
 };
 
 const App = () => {
-  const [showButton, setShowButton] = useState(false);
-
-  // Show button when scrollY > 300
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Scroll to top
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <ThemeProvider>
@@ -124,13 +104,6 @@ const App = () => {
               <Route path="/dashboard" element={<AdminDashboard />} />
             </Routes>
           </Suspense>
-
-          {/* Back to Top Button */}
-          {showButton && (
-            <button className="back-to-top" onClick={scrollToTop}>
-              ↑
-            </button>
-          )}
         </div>
       </BrowserRouter>
     </ThemeProvider>
